@@ -1,0 +1,46 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [
+      {
+        "pattern": "h[ey]|[i]|[allo][^\\s]*",
+        "name": "greet"
+      }
+    ],
+    "common_examples": [
+      {
+        "intent": "overall wireshark",
+        "text": "erzähl mir etwas über wireshark"
+      },
+      {
+        "intent": "overall wireshark",
+        "text": "berichte mir über wireshark"
+      },
+      {
+        "intent": "start lab",
+        "text": "wann fängt das labor an"
+      },
+      {
+        "intent": "start lab",
+        "text": "wie haben wir heute labor?"
+      },
+      {
+        "intent": "homeoffice",
+        "text": "is das labor zuhause durchführbar?"
+      },
+      {
+        "intent": "homeoffice",
+        "text": "kann ich das labor auch von zuhause aus machen?"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "wireshark",
+        "synonyms": [
+          "netzwerktool",
+          "sharkwire",
+          "wrieshark"
+        ]
+      }
+    ]
+  }
+}
