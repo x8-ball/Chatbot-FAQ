@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Labor Chatbot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+
+<div class="headline">
+  <h1>Chatbot Demo</h1> 
+  <p>Frage den Bot um Hilfe!</p> 
+</div>
+
+<div class="w3-row-padding" name="question>
+ <form action="/action_page.php">
+  Frage: <input type="text" name="question"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<div class="box" name="optinal">
+Es tut mir leid, ich habe deine Frage nicht verstanden. Meintest du vielleicht:<br>
+<input type="text" name="answer" value="answer1"><br>
+<input type="text" name="answer" value="answer2"><br>
+<input type="text" name="answer" value="answer3"><br>
+</div>
+<div>
+Antwort: <input type="text" name="answer"><br>
+</div>
+
+<div>
+<form action="/action_page.php">
+  War diese Antwort hilfreich?  : 
+  <input type="button" name="yes" value="Ja" onclick="helpfull()">
+  <input type="button" name="no" value="nein" onclick="nohelpfull()"><br>
+
+
+</body>
+</html>
