@@ -1,0 +1,50 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [
+      {
+        "name": "greet",
+        "pattern": "h[ey]|[i]|[allo][^\\s]*"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "wireshark",
+        "synonyms": ["wrieshark", "netzwerktool", "sharkwire"]
+      }
+    ],
+    "common_examples": [
+      {
+      	"text" : "was ist ping?",
+      	"intent" : "ping"
+      },
+      {
+      	"text" : "was ist traceroute?",
+      	"intent" : "traceroute"
+      },
+      {
+      	"text" : "was ist arp?",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "was ist ipconfig?",
+      	"intent" : "ipconfig"
+      },
+      {
+      	"text" : "was ist netstat?",
+      	"intent" : "netstat"
+      },
+      {
+      	"text" : "was ist nslookup?",
+      	"intent" : "nslookup"
+      },
+      {
+      	"text" : "was ist route?",
+      	"intent" : "route"
+      },
+      {
+      	"text" : "kann ich das labor auch von zuhause aus machen?",
+      	"intent" : "homeoffice"
+      }
+    ]
+  }
+}
