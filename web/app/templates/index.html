@@ -24,7 +24,7 @@ $(document).ready(function() {
 			console.log(msg.session_id + " connected");
 		}
 		else{
-			var appendum = '<dd> ich denke '+msg.answer + ' | war diese antwort hilfreich? : <button onClick=sendEvaluation("'+msg.id.toString()+'","false")><button onClick=sendEvaluation("'+msg.id.toString()+'","true")> </dd>';
+			var appendum = '<dd> ich denke '+ msg.answer.name + ' | war diese antwort hilfreich? : <button onClick=sendEvaluation("'+msg.id.toString()+'","true")> Ja</button><button onClick=sendEvaluation("'+msg.id.toString()+'","false")>Nein</button></dd>';
 			$("#messages").append(appendum);
 			console.log(appendum);
 		}
@@ -39,7 +39,7 @@ $(document).ready(function() {
 		console.log(message);
 		if(message){
 			socket.send(message);
-			$("#messages").append('<dt>'+message+'</dt>');
+			$("#messages").append('<dt>'+message.text+'</dt>');
 			$('#myMessage').val('');
 			console.log("Sent " + message);
 		}

@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 from flask_socketio import SocketIO, send
+import brain
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
@@ -14,8 +15,10 @@ def handleMessage(msg):
 			print("rating answer " + str(msg))
 		if(msg['type'] == "question"):
 			#calculate answer and send to user
-			send({"answer" : "generatedAnswer", "id" : "user_id"})
-			print('Antwort: ' + str(msg))
+			print('user asked : ' + msg['text'])
+			answer = brain.calcResponse(msg['text'])
+			send({"answer" : answer, "id" : "user_id"})
+			print('Antwort: ' + str(answer))
 
 @socketio.on('connect')
 def on_connect():

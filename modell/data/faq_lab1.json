@@ -14,7 +14,7 @@
     ],
     "common_examples": [
       {
-      	"text" : "erzähl mir etwas über wireshark",
+      	"text" : "* wireshark *",
       	"intent" : "overall wireshark"
       },
       {

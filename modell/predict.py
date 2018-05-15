@@ -2,8 +2,9 @@ from rasa_nlu.converters import load_data
 from rasa_nlu.config import RasaNLUConfig
 from rasa_nlu.model import Trainer
 from rasa_nlu.model import Metadata, Interpreter
+import sys
 
-model_directory = "projects/default/model_20180328-130307/"
+model_directory = "./projects/default/model_20180514-173110"
 interpreter = Interpreter.load(model_directory, RasaNLUConfig("config_chatbot_spacy.json"))
 
 q1 = u"Wann ist das Labor?"
@@ -21,3 +22,9 @@ print(q2)
 obj2 = a2['intent_ranking'][0]
 print("intent :" + str(obj2['name']) + " with " + str(obj2['confidence']))
 print(a2)
+print("\n\n#################################")
+
+eingabe = '' 
+while eingabe != 'ENDE':
+	answer = interpreter.parse(raw_input('>_').decode(sys.stdin.encoding))['intent_ranking'][0]
+	print(answer['name'],answer['confidence'])
