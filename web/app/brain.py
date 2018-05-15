@@ -4,7 +4,7 @@ from rasa_nlu.model import Trainer
 from rasa_nlu.model import Metadata, Interpreter
 import sys
 
-model_directory = "../../modell/projects/default/model_20180514-173110"
+model_directory = "../../modell/projects/default/model_20180515-115936"
 interpreter = Interpreter.load(model_directory, RasaNLUConfig("../../modell/config_chatbot_spacy.json"))
 
 def calcResponse(question):

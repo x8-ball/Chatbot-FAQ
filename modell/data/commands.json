@@ -14,31 +14,89 @@
     ],
     "common_examples": [
       {
-      	"text" : "was ist ping?",
+      	"text" : "was ist ping",
       	"intent" : "ping"
       },
       {
-      	"text" : "was ist traceroute?",
+      	"text" : "wie funktioniert ping",
+      	"intent" : "ping"
+      },
+      {
+      	"text" : "ping",
+      	"intent" : "ping"
+      },
+      {
+      	"text" : "was ist traceroute",
       	"intent" : "traceroute"
       },
       {
-      	"text" : "was ist arp?",
+      	"text" : "wie funktioniert traceroute",
+      	"intent" : "traceroute"
+      },
+      {
+      	"text" : "traceroute",
+      	"intent" : "traceroute"
+      },
+      {
+      	"text" : "was ist arp",
       	"intent" : "arp"
       },
       {
-      	"text" : "was ist ipconfig?",
-      	"intent" : "ipconfig"
+      	"text" : "wie funktioniert arp",
+      	"intent" : "arp"
       },
       {
-      	"text" : "was ist netstat?",
+      	"text" : "arp",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "was ist ipconfig",
+      	"intent" : "ipconfig"
+      },
+            {
+      	"text" : "wie funktioniert ipconfig",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "ipconfig",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "was ist netstat",
+      	"intent" : "netstat"
+      },
+            {
+      	"text" : "wie funktioniert netstat",
       	"intent" : "netstat"
       },
       {
-      	"text" : "was ist nslookup?",
+      	"text" : "netstat",
+      	"intent" : "netstat"
+      },
+      {
+      	"text" : "was ist nslookup",
+      	"intent" : "nslookup"
+      },
+      
+      {
+      	"text" : "wie funktioniert nslookup",
+      	"intent" : "nslookup"
+      },
+      
+      {
+      	"text" : "was ist nslookup",
       	"intent" : "nslookup"
       },
       {
-      	"text" : "was ist route?",
+      	"text" : "was ist route",
+      	"intent" : "route"
+      },
+       {
+      	"text" : "wie funktioniert route",
+      	"intent" : "route"
+      },
+       {
+      	"text" : "route",
       	"intent" : "route"
       },
       {
