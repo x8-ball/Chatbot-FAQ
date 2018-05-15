@@ -1,0 +1,108 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [
+      {
+        "name": "greet",
+        "pattern": "h[ey]|[i]|[allo][^\\s]*"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "wireshark",
+        "synonyms": ["wrieshark", "netzwerktool", "sharkwire"]
+      }
+    ],
+    "common_examples": [
+      {
+      	"text" : "was ist ping",
+      	"intent" : "ping"
+      },
+      {
+      	"text" : "wie funktioniert ping",
+      	"intent" : "ping"
+      },
+      {
+      	"text" : "ping",
+      	"intent" : "ping"
+      },
+      {
+      	"text" : "was ist traceroute",
+      	"intent" : "traceroute"
+      },
+      {
+      	"text" : "wie funktioniert traceroute",
+      	"intent" : "traceroute"
+      },
+      {
+      	"text" : "traceroute",
+      	"intent" : "traceroute"
+      },
+      {
+      	"text" : "was ist arp",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "wie funktioniert arp",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "arp",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "was ist ipconfig",
+      	"intent" : "ipconfig"
+      },
+            {
+      	"text" : "wie funktioniert ipconfig",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "ipconfig",
+      	"intent" : "arp"
+      },
+      {
+      	"text" : "was ist netstat",
+      	"intent" : "netstat"
+      },
+            {
+      	"text" : "wie funktioniert netstat",
+      	"intent" : "netstat"
+      },
+      {
+      	"text" : "netstat",
+      	"intent" : "netstat"
+      },
+      {
+      	"text" : "was ist nslookup",
+      	"intent" : "nslookup"
+      },
+      
+      {
+      	"text" : "wie funktioniert nslookup",
+      	"intent" : "nslookup"
+      },
+      
+      {
+      	"text" : "was ist nslookup",
+      	"intent" : "nslookup"
+      },
+      {
+      	"text" : "was ist route",
+      	"intent" : "route"
+      },
+       {
+      	"text" : "wie funktioniert route",
+      	"intent" : "route"
+      },
+       {
+      	"text" : "route",
+      	"intent" : "route"
+      },
+      {
+      	"text" : "kann ich das labor auch von zuhause aus machen?",
+      	"intent" : "homeoffice"
+      }
+    ]
+  }
+}
