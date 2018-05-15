@@ -1,0 +1,58 @@
+#sprechblase {  
+  position: absolute;  
+  width: 250px;  
+  height: 120px;
+  right: 750px;
+  top: 50px;
+  line-height: 120px;  
+  font-size: 1.8em;
+  font-family: helvetica, tahoma;
+  border: 4px solid grey;
+  margin:0 auto;  
+  -webkit-border-radius: 20px;  
+  -moz-border-radius: 20px;  
+  border-radius: 20px;
+  text-align: center;  
+  background: #fff;
+ }
+
+#sprechblase:before {  
+  content: ' ';  
+  position: absolute;  
+  width: 0;  
+  height: 0;  
+  left: 30px;  
+  top: 120px;  
+  border: 20px solid;  
+  border-color: grey transparent transparent grey;  
+  }
+
+#sprechblase:after {  
+  content: ' ';  
+  position: absolute;  
+  width: 0;  
+  height: 0;  
+  left: 34px;  
+  top: 120px;  
+  border: 15px solid;  
+  border-color: white transparent transparent white;  
+  }
+
+#img {
+  position: relative;
+  top: 100px
+}
+
+#myMessage {
+  resize: none;
+  border-color: transparent;
+}
+
+#sendbutton {
+  background-color: white;
+  color: #FF8044;
+  
+}
+#sendbutton:hover {
+  background-color: lightgrey;
+}
