@@ -3,11 +3,14 @@
 <title>Chat Room</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link rel="stylesheet" href="/static/sprechblase.css">
 </head>
+
 <body>
 
 <script type="text/javascript">
 var socket = io.connect('http://127.0.0.1:5000');
+var robi = 'bunt';
 
 function sendEvaluation(id, helpful){
 	var message = {
@@ -17,6 +20,17 @@ function sendEvaluation(id, helpful){
 	};
 	socket.send(message);
 }
+function changeRobi(){
+	var image = document.getElementById("robi");
+	if(robi.localeCompare('bunt')){
+		image.src = "/static/robi.jpg";
+		robi = 'weiss';
+	}
+	else{
+		image.src = "/static/robi_bunt.jpg";
+		robi = 'bunt';
+	}
+}
 $(document).ready(function() {
 	//empfange message und hänge diese an messages an
 	socket.on('message', function(msg) {
@@ -24,6 +38,7 @@ $(document).ready(function() {
 			console.log(msg.session_id + " connected");
 		}
 		else{
+			changeRobi();
 			var appendum = '<dd> ich denke '+ msg.answer.name + ' | war diese antwort hilfreich? : <button onClick=sendEvaluation("'+msg.id.toString()+'","true")> Ja</button><button onClick=sendEvaluation("'+msg.id.toString()+'","false")>Nein</button></dd>';
 			$("#messages").append(appendum);
 			console.log(appendum);
@@ -39,7 +54,7 @@ $(document).ready(function() {
 		console.log(message);
 		if(message){
 			socket.send(message);
-			$("#messages").append('<dt>'+message.text+'</dt>');
+			//$("#messages").append('<dt>'+message.text+'</dt>');
 			$('#myMessage').val('');
 			console.log("Sent " + message);
 		}
@@ -50,10 +65,23 @@ $(document).ready(function() {
 });
 </script>
 
-<h3>Hallo Lernender</h3>
-<dl widht=300px id="messages">
-</dl>
-<input type="text" id="myMessage">
-<button id="sendbutton">Send</button>
+
+ <img id="robi" src="/static/robi.jpg" alt="Robi" width="500" height=auto> 
+ <nobr></nobr>
+ 
+ <div id="sprechblase">
+   <dl widht=300px id="messages">
+   </dl>
+
+   <textarea id="myMessage" rows="4" cols="20"> </textarea>
+   <button id="sendbutton">Send</button>
+ </div>
+
+ <div id="sprechblase:before"> 
+ </div>
+
+ <div id="sprechblase:after">
+ </div>
+
 </body>
 </html>
