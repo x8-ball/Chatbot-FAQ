@@ -9,7 +9,7 @@ socketio = SocketIO(app)
 @socketio.on('message')
 def handleMessage(msg):
 	print("handleMessage")
-	print(msg.keys())
+	print(msg)
 	if(msg['type']):
 		if(msg['type'] == "rating"):
 			print("rating answer " + str(msg))
