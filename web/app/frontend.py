@@ -1,6 +1,9 @@
 from flask import Flask,render_template
 from flask_socketio import SocketIO, send
-#import brain
+import sys
+# Add the ptdraft folder path to the sys.path list
+sys.path.append('../../modell')
+import brain
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
@@ -17,10 +20,7 @@ def handleMessage(msg):
 			#calculate answer and send to user
 			print('user asked : ' + msg['text'])
 			#answer = brain.calcResponse(msg['text'])
-			answer = {
-				'name' : 'test',
-				'text' : 'lalalalal'
-				};
+			answer = 'hier steht ein text'
  			send({"answer" : answer, "id" : "user_id"})
 			print('Antwort: ' + str(answer))
 
