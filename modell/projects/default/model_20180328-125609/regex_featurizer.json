@@ -1,6 +1,0 @@
-[
-    {
-        "pattern": "h[ey]|[i]|[allo][^\\s]*",
-        "name": "greet"
-    }
-]
