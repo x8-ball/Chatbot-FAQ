@@ -1,0 +1,135 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+
+<!-- IPconfig -->
+	<category>
+		<pattern> Was ist Ipconfig?</pattern>
+		
+		<template>
+			Ipconfig zeigt Informationen über die lokale TCP/IP-Protokollkonfiguration
+		</template>
+	</category>
+	
+	<category>
+		<pattern> Wie funktioniert Ip-config?</pattern>
+		
+		<template>
+			Syntax: ipconfig [/Option]
+			ipconfig /? 
+			Hilfe zu ipconfig
+			ipconfig 			diverse Netzwerkinformationen
+			/all zeigt alle verfügbaren TCP/IP-Informationen an, inkl. DHCP, DNS und Informationen über die Netzwerkkarte mit der physikalischen Adresse.
+			/displaydns zeigt den lokalen DNS-Cache an
+			/flushdns  löscht den lokalen DNS-Cache
+		</template>
+	</category>
+<!-- Ping -->	
+	<category>
+		<pattern> Was ist Ping?</pattern>
+		
+		<template>
+			Das Kommando ping testet die Erreichbarkeit von Rechnern. 
+		</template>
+	</category>
+		<category>
+		<pattern> Wie funktioniert Ping?</pattern>
+		
+		<template>
+			Syntax: ping [Optionen] Zielrechner
+			-l Größe sendet die angegebene Pufferlänge im ping
+			-i ttl-Wert setzt im IP-Paket den ttl-Wert auf den angegebenen Wert
+		</template>
+	</category>
+<!-- traceroute -->	
+	<category>
+		<pattern> Was ist trace-route? </pattern>
+      
+		<template>
+			Trance-route ermittelt die Router auf dem Weg zum Ziel
+		</template>
+	</category>
+   
+	<category>
+		<pattern>wie funktioniert trace-route?</pattern>
+		
+		<template>
+			tracert [Option(en)] Host
+		</template>
+	</category>
+<!-- Arp -->
+	<category>
+		<pattern> Was ist arp?</pattern>
+		
+		<template>
+		Das Address Resolution Protocol (ARP) ist ein Protokoll, das zu einer IP-Adressedie passende physikalische Adresse (MAC-Adresse) ermittelt. 
+		Die Abbildung zwischen IP-Adresse und MAC-Adresse wird in jedem Rechner in der ARP-Tabelle (oder ARP-Cache) gespeichert. 
+		Der ARP-Cache enthält dynamische Einträge, die bei jedem Abruf mit einem Zeitstempel versehen werden. Wird ein Eintrag über eine gewisse Zeit nicht abgerufen, so wird er gelöscht.
+		<template>
+	</category>
+		<category>
+		<pattern>wie funktioniert arp?</pattern>
+		
+		<template>
+			Syntax: arp -[Option] 
+			arp -a zeigt alle Einträge in der ARP-Tabelle an
+		</template>
+	</category>
+<!-- Netstat -->
+	<category>
+		<pattern> Was ist Netstat?</pattern>
+		
+		<template>
+			Das Kommando netstat zeigt Protokollstatistiken, die Routing-Tabelle und aktive Verbindungen an.
+		</template>
+	</category>
+		<category>
+		<pattern> Wie funktioniert Netstat?</pattern>
+		
+		<template>
+			Syntax: netstat [Option(en)]
+			netstat listet aktive Verbindungen auf. Dabei werden die eingesetzten Protokolle, die Ports und der Status jeder Verbindung angegeben.
+			–n: zeigt Adressen und Portnummern numerisch an
+			–a: gibt alle Sockets an –auch die der Server, die auf eingehende Anfragen warten  
+			-r: zeigt die Routing-Tabelle (Alternative: route print)
+			–s gibt Statistiken aus (Ethernet, IP, TCP, UDP)
+		</template>
+	</category>
+<!-- Nslookup -->
+	<category>
+		<pattern> Was ist Nslookup?</pattern>
+		
+		<template>
+			Der Befehl nslookup wird genutzt um DNS-Information (Domain Name Service) abzufragen. Als Alternative gibt es unter Linux den Befehl dig.
+			nslookup wird verwendet, um IP-Adressen oder Domänen eines bestimmen Computers mittels DNS herauszufinden. Der Name des Befehls 
+			bedeutet „Name Server lookup“. Wenn man nslookup ohne Parameter aufruft, startet nslookup im interaktiven Modus. Verwenden Sie exit um auf die 
+			Kommando zeilezurückzukommen.
+		</template>
+	</category>
+		<category>
+		<pattern> Wie funktioniert Nslookup?</pattern>
+		
+		<template>
+			Syntax: nslookup [Option] IP-Adresse oder Rechnername 
+			nslookup IP-Adresse gibt den logischen Rechnernamen dieser IP-Adresse aus
+			nslookup Rechnername gibt die IP-Adresse zu diesem Namen an
+			nslookup –type=ns domain gibt die Nameserver einer Domäne aus
+		</template>
+	</category>
+<!-- Route -->
+	<category>
+		<pattern> Was ist Route?</pattern>
+		
+		<template>
+			Der Befehl route zeigt die Einträge in der lokalen IP-Routing-Tabelle an und ändert sie. 
+		</template>
+	</category>
+		<category>
+		<pattern> Wie funktioniert Route?</pattern>
+		
+		<template>
+			route print zeigt die Routing-Tabelle des lokalen Rechners an.
+			Für den Versuch wird nur das Kommando route print verwendet, um die Routing-Tabelle anzuzeigen. Alternativ kann netstat –r eingesetzt werden.
+		</template>
+	</category>
+
+</aiml>
