@@ -19,7 +19,7 @@ class App(QWidget):
  
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 image - pythonspot.com'
+        self.title = 'Chatbot FAQ'
         self.left = 10
         self.top = 10
         self.width = 640
@@ -68,7 +68,7 @@ class App(QWidget):
         sg = QDesktopWidget().screenGeometry()
         textboxValue = self.textbox.text()
         print(str(ag) + ' ' + str(sg))
-        QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
+        QMessageBox.question(self, 'Nachricht', "Eingabe: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
         self.textbox.setText("")
 
  
