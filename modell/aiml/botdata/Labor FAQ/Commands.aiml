@@ -21,6 +21,7 @@
 			/all zeigt alle verfügbaren TCP/IP-Informationen an, inkl. DHCP, DNS und Informationen über die Netzwerkkarte mit der physikalischen Adresse.
 			/displaydns zeigt den lokalen DNS-Cache an
 			/flushdns  löscht den lokalen DNS-Cache
+			Anmerkung: Unter Linux heißt dieser Befehl ifconfig.
 		</template>
 	</category>
 <!-- Ping -->	
@@ -131,5 +132,11 @@
 			Für den Versuch wird nur das Kommando route print verwendet, um die Routing-Tabelle anzuzeigen. Alternativ kann netstat –r eingesetzt werden.
 		</template>
 	</category>
-
+<!-- Srai -->
+	<category
+		<pattern> * funktioniert nicht <pattern>
+		<template>
+			<srai>Wie funktioniert </star></srai>
+		</template>
+	</category>
 </aiml>
