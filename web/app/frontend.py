@@ -9,6 +9,7 @@ import brain
 
 app = Flask(__name__)
 app.debug = False
+app.debug = True
 app.host = '0.0.0.0'
 socketio = SocketIO(app)
 #bei rpi: 'chatbot.local'
