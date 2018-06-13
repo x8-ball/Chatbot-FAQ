@@ -20,17 +20,19 @@ class App(QWidget):
     def __init__(self):
         super().__init__()
         self.title = 'Chatbot FAQ'
-        self.left = 10
-        self.top = 10
-        self.width = 640
-        self.height = 480
+        self.left = 200
+        self.top = 200
+        self.width = 300
+        self.height = 300
         self.initUI()
  
     def initUI(self):
         self.setWindowTitle(self.title)
-        #self.setWindowFlags(Qt.FramelessWindowHint)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+       
 
         ag = QDesktopWidget().availableGeometry()
         sg = QDesktopWidget().screenGeometry()
@@ -44,30 +46,38 @@ class App(QWidget):
         #self.statusBar().showMessage('Message in statusbar.')
         # Create widget
         label = QLabel(self)
-        pixmap = QPixmap('robi_bunt.jpg')
+        pixmap = QPixmap('robi_bunt.png')
         label.setPixmap(pixmap.scaled(256,256, Qt.KeepAspectRatio))
-        self.resize(pixmap.width(),pixmap.height())
+        #self.resize(pixmap.width(),pixmap.height())
  
+        self.output = QLabel(self)
+        self.output.setText("lorem ipsum dolor sita mia iasdjasiodjaojsdoijajisdodajsji")
+
         # Create a button in the window
         self.button = QPushButton('Show text', self)
-        self.button.move(0,widget.height()+self.button.height())
- 
         # connect button to function on_click
         self.button.clicked.connect(self.on_click)
-
         # Create textbox
         self.textbox = QLineEdit(self)
-        self.textbox.move(0,widget.height()+self.button.height() + self.textbox.height())
-        self.textbox.resize(300,100)
+        
+ 
+        ySize = 50
+        self.textbox.resize(200,ySize)
+        self.button.resize(100,ySize)
+        self.output.resize(200,100)
 
+        yAxis = 300 - label.height() - self.button.height()
+        self.textbox.move(0,yAxis)
+        self.button.move(200,yAxis)
+        self.output.move(0,0)
+        
         self.show()
  
     @pyqtSlot()
     def on_click(self):
-        ag = QDesktopWidget().availableGeometry()
-        sg = QDesktopWidget().screenGeometry()
         textboxValue = self.textbox.text()
-        print(str(ag) + ' ' + str(sg))
+        print("lalal")
+        self.output.hide()
         QMessageBox.question(self, 'Nachricht', "Eingabe: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
         self.textbox.setText("")
 
