@@ -8,37 +8,31 @@ sys.path.append('../../modell')
 import brain
 
 app = Flask(__name__)
+app.debug = True
+app.host = '0.0.0.0'
 socketio = SocketIO(app)
+#bei rpi: 'chatbot.local'
+adress = '127.0.0.1'
 
 @socketio.on('message')
 def handleMessage(msg):
 	print("handleMessage")
 	print(msg)
 	if(msg['type']):
-		if(msg['type'] == "rating"):
-			print("rating answer " + str(msg))
 		if(msg['type'] == "question"):
 			#calculate answer and send to user
 			print('user asked : ' + msg['text'])
 			answer = brain.calcResponse(msg['text'])
-			#answer = 'hier steht ein text'
- 			send({"answer" : answer, "id" : "user_id"})
+ 			send({"answer" : answer})
 			print('Antwort: ' + str(answer))
 
-@socketio.on('connect')
-def on_connect():
-    send({"session_id" : "currentUser123187391"})
-    print("user connected")
-
-@socketio.on('disconnect')
-def on_disconnect():
-    print('Client disconnected')
-
-@app.route('/')
-def index():
-	return render_template('index.html',adress = 'chatbot.local')
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
+	return render_template('index.html',adress = adress)
 
 
 if __name__ == '__main__':
-	app.run(debug=False,host='0.0.0.0')
+	if len(sys.argv) > 1:
+		adress = sys.argv[1]
 	socketio.run(app)
