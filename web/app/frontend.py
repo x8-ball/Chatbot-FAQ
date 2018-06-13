@@ -2,11 +2,12 @@ from flask import Flask,render_template
 from flask_socketio import SocketIO, send
 import sys
 # Add the ptdraft folder path to the sys.path list
+sys.path.append('.')
 sys.path.append('../../modell')
+
 import brain
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecret'
 socketio = SocketIO(app)
 
 @socketio.on('message')
@@ -33,10 +34,11 @@ def on_connect():
 def on_disconnect():
     print('Client disconnected')
 
-@app.route('/index')
+@app.route('/')
 def index():
 	return render_template('index.html')
 
 
 if __name__ == '__main__':
+	app.run(debug=False,host='0.0.0.0')
 	socketio.run(app)
