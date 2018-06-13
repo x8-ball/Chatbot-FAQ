@@ -8,12 +8,11 @@ sys.path.append('../../modell')
 import brain
 
 app = Flask(__name__)
-app.debug = False
 app.debug = True
 app.host = '0.0.0.0'
 socketio = SocketIO(app)
-#bei rpi: 'chatbot.local'
-adress = '127.0.0.1'
+#bei localhost: '127.0.0.1'
+adress = 'chatbot.local'
 
 @socketio.on('message')
 def handleMessage(msg):
@@ -24,9 +23,8 @@ def handleMessage(msg):
 			#calculate answer and send to user
 			print('user asked : ' + msg['text'])
 			answer = brain.calcResponse(msg['text'])
- 			send({"answer" : answer})
+			send({"answer" : answer})
 			print('Antwort: ' + str(answer))
-
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
