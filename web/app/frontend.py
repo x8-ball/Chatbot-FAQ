@@ -20,8 +20,8 @@ def handleMessage(msg):
 		if(msg['type'] == "question"):
 			#calculate answer and send to user
 			print('user asked : ' + msg['text'])
-			#answer = brain.calcResponse(msg['text'])
-			answer = 'hier steht ein text'
+			answer = brain.calcResponse(msg['text'])
+			#answer = 'hier steht ein text'
  			send({"answer" : answer, "id" : "user_id"})
 			print('Antwort: ' + str(answer))
 
@@ -36,7 +36,7 @@ def on_disconnect():
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index.html',adress = 'chatbot.local')
 
 
 if __name__ == '__main__':
