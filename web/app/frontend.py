@@ -16,12 +16,10 @@ adress = 'chatbot.local'
 
 @socketio.on('message')
 def handleMessage(msg):
-	print("handleMessage")
-	print(msg)
 	if(msg['type']):
 		if(msg['type'] == "question"):
 			#calculate answer and send to user
-			print('user asked : ' + msg['text'])
+			print('User fragte: ' + msg['text'])
 			answer = brain.calcResponse(msg['text'])
 			send({"answer" : answer})
 			print('Antwort: ' + str(answer))
@@ -32,6 +30,6 @@ def index(path):
 
 
 if __name__ == '__main__':
-	if len(sys.argv) > 1:
-		adress = sys.argv[1]
+	if app.debug:
+		adress = 'localhost'
 	socketio.run(app)
