@@ -1,0 +1,7 @@
+cd ~/Chatbot-FAQ
+git reset --hard
+git fetch
+git pull
+chmod +x ./startupScript
+./startupScript
+cd ~

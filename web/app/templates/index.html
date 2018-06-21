@@ -9,17 +9,9 @@
 <body>
 
 <script type="text/javascript">
-var socket = io.connect('http://127.0.0.1:5000');
+var socket = io.connect('http://{{adress}}:5000');
 var robi = 'bunt';
 
-function sendEvaluation(id, helpful){
-	var message = {
-		"type" : "rating",
-		"id" : id,
-		"helpful" : helpful
-	};
-	socket.send(message);
-}
 function changeRobi(){
 	var image = document.getElementById("robi");
 	if(robi.localeCompare('bunt')){
@@ -34,14 +26,10 @@ function changeRobi(){
 $(document).ready(function() {
 	//empfange message und hänge diese an messages an
 	socket.on('message', function(msg) {
-		if(msg.session_id){
-			console.log(msg.session_id + " connected");
-		}
-		else{
+		if(msg.answer){
 			changeRobi();
-			var appendum = '<dd> ich denke '+ msg.answer + ' | war diese antwort hilfreich? : <button onClick=sendEvaluation("'+msg.id.toString()+'","true")> Ja</button><button onClick=sendEvaluation("'+msg.id.toString()+'","false")>Nein</button></dd>';
+			var appendum = '<dd>'+ msg.answer +'</dd>';
 			$("#messages").append(appendum);
-			console.log(appendum);
 		}
 	});
 	//sende Nachricht und resette danach fenster von myMessage
@@ -50,8 +38,6 @@ $(document).ready(function() {
 			"text" : $('#myMessage').val(),
 			"type" : "question"
 		};
-		console.log(typeof message);
-		console.log(message);
 		if(message){
 			socket.send(message);
 			//$("#messages").append('<dt>'+message.text+'</dt>');

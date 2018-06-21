@@ -2,41 +2,34 @@ from flask import Flask,render_template
 from flask_socketio import SocketIO, send
 import sys
 # Add the ptdraft folder path to the sys.path list
+sys.path.append('.')
 sys.path.append('../../modell')
+
 import brain
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecret'
+app.debug = True
+app.host = '0.0.0.0'
 socketio = SocketIO(app)
+#bei localhost: '127.0.0.1'
+adress = 'chatbot.local'
 
 @socketio.on('message')
 def handleMessage(msg):
-	print("handleMessage")
-	print(msg)
 	if(msg['type']):
-		if(msg['type'] == "rating"):
-			print("rating answer " + str(msg))
 		if(msg['type'] == "question"):
 			#calculate answer and send to user
-			print('user asked : ' + msg['text'])
-			#answer = brain.calcResponse(msg['text'])
-			answer = 'hier steht ein text'
- 			send({"answer" : answer, "id" : "user_id"})
+			print('User fragte: ' + msg['text'])
+			answer = brain.calcResponse(msg['text'])
+			send({"answer" : answer})
 			print('Antwort: ' + str(answer))
-
-@socketio.on('connect')
-def on_connect():
-    send({"session_id" : "currentUser123187391"})
-    print("user connected")
-
-@socketio.on('disconnect')
-def on_disconnect():
-    print('Client disconnected')
-
-@app.route('/index')
-def index():
-	return render_template('index.html')
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
+	return render_template('index.html',adress = adress)
 
 
 if __name__ == '__main__':
+	if app.debug:
+		adress = 'localhost'
 	socketio.run(app)
