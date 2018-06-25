@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Chat Room</title>
+<title>Chatbot Robi</title>
+<link rel="stylesheet" href="sprechblase.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <link rel="stylesheet" href="/static/sprechblase.css">
@@ -56,15 +57,27 @@ $(document).ready(function() {
 </script>
 
 
- <img id="robi" src="/static/robi.jpg" alt="Robi" width="500" height=auto> 
- <nobr></nobr>
+ <img id="img1" src="robi1.png" alt="Chatbot" width="500" height=auto ><nobr></nobr>
+ <img id="img2" src="robi2.png" alt="Chatbot" width="500" height=auto style="visibility:hidden">
+ <script type="text/javascript">
+      function tend() {
+        document.getElementById('img1').style.visibility='hidden';
+		document.getElementById('img2').style.visibility='visible';
+      }
+    </script>
  
  <div id="sprechblase">
+   <h4> Hallo, ich bin Robi. </h4>
    <dl widht=300px id="messages">
    </dl>
 
-   <textarea id="myMessage" rows="4" cols="20"> </textarea>
-   <button id="sendbutton">Send</button>
+   <input type="hidden" id="message">
+   <input type="hidden" id="sendbutton" onclick="tend()" value="back">
+ </div>
+ 
+ <div id="eingabefeld">
+   <input type="text" id="myMessage" placeholder="Frage hier eintippen">
+   <button id="sendbutton" onclick="tend()" value="back">Send</button>
  </div>
 
  <div id="sprechblase:before"> 
