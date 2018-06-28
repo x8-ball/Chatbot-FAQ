@@ -10,24 +10,8 @@
 <body>
 
 <script type="text/javascript">
-<<<<<<< Updated upstream
 var socket = io.connect('http://{{adress}}:5000');
-=======
-var socket = io.connect('http://127.0.0.1:5000 ');
->>>>>>> Stashed changes
-var robi = 'bunt';
 
-function changeRobi(){
-	var image = document.getElementById("robi");
-	if(robi.localeCompare('bunt')){
-		image.src = "/static/robi.jpg";
-		robi = 'weiss';
-	}
-	else{
-		image.src = "/static/robi_bunt.jpg";
-		robi = 'bunt';
-	}
-}
 $(document).ready(function() {
 	//empfange message und hänge diese an messages an
 	socket.on('message', function(msg) {
@@ -57,8 +41,8 @@ $(document).ready(function() {
 </script>
 
 
- <img id="img1" src="robi1.png" alt="Chatbot" width="500" height=auto ><nobr></nobr>
- <img id="img2" src="robi2.png" alt="Chatbot" width="500" height=auto style="visibility:hidden">
+ <img id="img1" src="/static/robi1.png" alt="Chatbot" width="500" height=auto ><nobr></nobr>
+ <img id="img2" src="/static/robi2.png" alt="Chatbot" width="500" height=auto style="visibility:hidden">
  <script type="text/javascript">
       function tend() {
         document.getElementById('img1').style.visibility='hidden';
@@ -71,13 +55,14 @@ $(document).ready(function() {
    <dl widht=300px id="messages">
    </dl>
 
-   <input type="hidden" id="message">
-   <input type="hidden" id="sendbutton" onclick="tend()" value="back">
+   <input id="message">
+   <input id="sendbutton" onclick="tend()" value="back">
  </div>
  
  <div id="eingabefeld">
-   <input type="text" id="myMessage" placeholder="Frage hier eintippen">
    <button id="sendbutton" onclick="tend()" value="back">Send</button>
+   <input type="text" id="myMessage" placeholder="Frage hier eintippen">
+   
  </div>
 
  <div id="sprechblase:before"> 
