@@ -9,6 +9,8 @@ from builtins import (
 ######
 
 import sys
+import socket
+
 from PyQt5.QtWidgets import (QMainWindow, QApplication, QWidget, 
     QPushButton, QAction, QLineEdit, QMessageBox, 
     QLabel, QDesktopWidget,QScrollArea)
@@ -16,32 +18,43 @@ from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import pyqtSlot,Qt
 from socketIO_client import SocketIO, LoggingNamespace
 
-
+HOST = '127.0.0.1'
 class App(QWidget):
  
     def __init__(self):
         super().__init__()
         self.title = 'Chatbot FAQ'
+        self.history = ''
+
         self.left = 200
         self.top = 200
         self.width = 500
         self.height = 500
-        self.initSockets()
-        self.initUI()
- 
-    def initSockets(self):
-        self.socketIO = SocketIO('127.0.0.1', 5000)
-        self.socketIO.on('message', self.on_response)
 
-    def initUI(self):
+        self.inputWidgetHeight = 100
+
+        self.initSockets()
+        self.setWindow()
+        self.initUI()
+
+    def checkIfHostUp(self):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        result = sock.connect_ex((HOST, 5000))
+        if result == 0:
+           return True
+        else:
+           return False
+
+    def setWindow(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-
         #self.setWindowFlags(Qt.FramelessWindowHint)
+        #self.statusBar().showMessage('Message in statusbar.')
         self.setAttribute(Qt.WA_TranslucentBackground)
-        
-        self.setWindowModality(Qt.NonModal)
+        self.setWindowModality(Qt.NonModal)  
+        self.adjustWindow()
 
+    def adjustWindow(self):
         ag = QDesktopWidget().availableGeometry()
         sg = QDesktopWidget().screenGeometry()
 
@@ -50,74 +63,85 @@ class App(QWidget):
         y = 2 * ag.height() - sg.height() - widget.height()
         self.move(x, y)
 
+    def initSockets(self):
+        if self.checkIfHostUp():
+            self.socketIO = SocketIO('127.0.0.1', 5000)
+            self.socketIO.on('message', self.on_response)   
+        else:
+            raise Exception('Host is not up')
 
-        #self.statusBar().showMessage('Message in statusbar.')
-        # Create widget
-        self.label = QLabel(self)
-        pixmap = QPixmap('robi_bunt.png')
-        self.label.setPixmap(pixmap.scaled(256,256, Qt.KeepAspectRatio))
-        
-        
+    def createPinboard(self):
+        pinboard = QLabel(self)
+        pinboard.setAlignment(Qt.AlignCenter)
+        pinboard.setStyleSheet("color: white; ")
+        pinboard.setText("")
+        #pinboard.setAttribute(Qt.WA_TranslucentBackground)
+        pinboard.resize(self.width,300)
+        return pinboard
 
-        self.output = QLabel(self)
-        #self.output.setText("lorem ipsum dolor sita mia iasdjasiodjaojsdoijajisdodajsji")
-
+    def createButton(self):
         # Create a button in the window
-        self.button = QPushButton('Ask Robi', self)
+        button = QPushButton('Ask Robi', self)
+        button.resize(100,self.inputWidgetHeight)
         # connect button to function on_click
-        self.button.clicked.connect(self.on_click)
-        # Create textbox
-        self.textbox = QLineEdit(self)
+        button.clicked.connect(self.on_click)
+        return button
 
-        self.pinboard = QLabel(self)
-        self.pinboard.setAlignment(Qt.AlignCenter)
-        self.pinboard.setStyleSheet("color: white; ")
-        self.history = ""
-        self.pinboard.setText(self.history)
-        #self.pinboard.setAttribute(Qt.WA_TranslucentBackground)
-        self.pinboard.resize(self.width,300)
-        ySize = 100
-        self.textbox.resize(200,ySize)
-        self.button.resize(100,ySize)
-        self.output.resize(200,100)
+    def createAvatar(self):
+        avatar = QLabel(self)
+        pixmap = QPixmap('robi_bunt.png')
+        avatar.setPixmap(pixmap.scaled(256,256, Qt.KeepAspectRatio))
+        return avatar
 
-        yAxis = 300 - self.label.height() - self.button.height()
+    def createInputArea(self):
+        inputArea = QLineEdit(self)
+        inputArea.resize(200,self.inputWidgetHeight)
+        return inputArea
 
-        xAntiPattern = self.textbox.width() + self.button.width()
-        """
-        self.textbox.move(0,yAxis)
-        self.button.move(200,yAxis)
-        self.output.move(0,0)
-        """
+    def adjustWidgets(self):
+        yAxis = 300 - self.avatar.height() - self.button.height()
+        xAntiPattern = self.inputArea.width() + self.button.width()
         self.pinboard.move(0,0)
-        self.textbox.move(1,self.height-self.textbox.height()-1)
-        self.button.move(1+self.textbox.width(),self.height-self.button.height()-1)
-        self.output.move(0,0)
-        self.label.move(self.width/2,self.height/2)
+        self.inputArea.move(1,self.height-self.inputArea.height()-1)
+        self.button.move(1+self.inputArea.width(),self.height-self.button.height()-1)
+        self.avatar.move(self.width/2,self.height/2)        
+
+    def initUI(self):
+        # Create widgets
+        self.avatar = self.createAvatar()
+        self.button = self.createButton()
+        self.inputArea = self.createInputArea()
+        self.pinboard = self.createPinboard()
+        self.adjustWidgets()
         self.show()
+
+
     def on_response(self,*args):
     #print('on_response', args)
+        print("response incoming")
         try:
-            self.history += 'Answered: '+ args[0]['answer'] + '\n'
+            self.history += 'Answered: '+ args[0]['answer'].replace(".",".\n") + '\n'
             self.pinboard.setText(self.history)
-            print(args[0]['answer'])
+            #   print(args[0]['answer'])
             #QMessageBox.question(self, 'Nachricht', "Antwort: " + args[0]['answer'], QMessageBox.Ok, QMessageBox.Ok)
-            self.textbox.setText("")
+            self.inputArea.setText("")
         except:
+            print(type(args[0]))
             pass
 
 
     @pyqtSlot()
     def on_click(self):
-        textboxValue = self.textbox.text()
+        print("started Click")
+        textboxValue = self.inputArea.text()
         self.history += 'Asked: '+ textboxValue + '\n'
         self.pinboard.setText(self.history)
-        self.output.hide()
+        #self.output.hide()
         self.socketIO.send({
             "text" : textboxValue,
             "type" : "question"
             })
-        self.socketIO.wait(seconds=1) 
+        self.socketIO.wait(seconds=0.1) 
 
  
 if __name__ == '__main__':
