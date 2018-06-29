@@ -6,7 +6,11 @@ from builtins import (
          ascii, chr, hex, input, next, oct, open,
          pow, round, super,
          filter, map, zip)
-######
+###############
+#TextToSpeech Dependencies#
+from gtts import gTTS
+from playsound import playsound
+###############
 
 import sys
 import socket
@@ -117,22 +121,21 @@ class App(QWidget):
 
 
     def on_response(self,*args):
-    #print('on_response', args)
-        print("response incoming")
         try:
             self.history += 'Answered: '+ args[0]['answer'].replace(".",".\n") + '\n'
             self.pinboard.setText(self.history)
             #   print(args[0]['answer'])
             #QMessageBox.question(self, 'Nachricht', "Antwort: " + args[0]['answer'], QMessageBox.Ok, QMessageBox.Ok)
             self.inputArea.setText("")
+            tts = gTTS(text=args[0]['answer'], lang='en')
+            tts.save("tmp.mp3")
+            playsound("tmp.mp3")
         except:
-            print(type(args[0]))
             pass
 
 
     @pyqtSlot()
     def on_click(self):
-        print("started Click")
         textboxValue = self.inputArea.text()
         self.history += 'Asked: '+ textboxValue + '\n'
         self.pinboard.setText(self.history)
