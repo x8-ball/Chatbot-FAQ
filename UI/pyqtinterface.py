@@ -77,7 +77,8 @@ class App(QWidget):
     def createPinboard(self):
         pinboard = QLabel(self)
         pinboard.setAlignment(Qt.AlignCenter)
-        pinboard.setStyleSheet("color: white; ")
+        #pinboard.setStyleSheet("color: white; ")
+        pinboard.setStyleSheet("image: url(wolke.png)")
         pinboard.setText("")
         #pinboard.setAttribute(Qt.WA_TranslucentBackground)
         pinboard.resize(self.width,300)
@@ -124,12 +125,13 @@ class App(QWidget):
         try:
             self.history += 'Answered: '+ args[0]['answer'].replace(".",".\n") + '\n'
             self.pinboard.setText(self.history)
-            #   print(args[0]['answer'])
-            #QMessageBox.question(self, 'Nachricht', "Antwort: " + args[0]['answer'], QMessageBox.Ok, QMessageBox.Ok)
+            #print(args[0]['answer'])
             self.inputArea.setText("")
-            tts = gTTS(text=args[0]['answer'], lang='en')
-            tts.save("tmp.mp3")
-            playsound("tmp.mp3")
+            """
+            tts = gTTS(text=args[0]['answer'], lang='de')
+            tts.save("..mp3")
+            playsound("..mp3")
+            """
         except:
             pass
 
@@ -137,7 +139,7 @@ class App(QWidget):
     @pyqtSlot()
     def on_click(self):
         textboxValue = self.inputArea.text()
-        self.history += 'Asked: '+ textboxValue + '\n'
+        self.history = 'Asked: '+ textboxValue + '\n'
         self.pinboard.setText(self.history)
         #self.output.hide()
         self.socketIO.send({
