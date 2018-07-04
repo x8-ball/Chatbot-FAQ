@@ -1,7 +1,0 @@
-{
-  "project" : "chatbotFAQ",	
-  "pipeline" : "spacy_sklearn",
-  "path" : "./projects",
-  "data" : "./data/demo-data.json",
-  "language" : "de"
-}
