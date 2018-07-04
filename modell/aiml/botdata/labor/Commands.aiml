@@ -1,5 +1,5 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<aiml version = "1.0.1" encoding = "UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
 
 <!-- IPconfig -->
 	<category>
@@ -65,7 +65,7 @@
 		Das Address Resolution Protocol (ARP) ist ein Protokoll, das zu einer IP-Adressedie passende physikalische Adresse (MAC-Adresse) ermittelt. 
 		Die Abbildung zwischen IP-Adresse und MAC-Adresse wird in jedem Rechner in der ARP-Tabelle (oder ARP-Cache) gespeichert. 
 		Der ARP-Cache enthält dynamische Einträge, die bei jedem Abruf mit einem Zeitstempel versehen werden. Wird ein Eintrag über eine gewisse Zeit nicht abgerufen, so wird er gelöscht.
-		<template>
+		</template>
 	</category>
 		<category>
 		<pattern>wie funktioniert arp?</pattern>
@@ -133,10 +133,10 @@
 		</template>
 	</category>
 <!-- Srai -->
-	<category
-		<pattern> * funktioniert nicht <pattern>
+	<category>
+		<pattern> * funktioniert nicht </pattern>
 		<template>
-			<srai>Wie funktioniert </star></srai>
+			<srai>Wie funktioniert <star/></srai>
 		</template>
 	</category>
 </aiml>
