@@ -1,10 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chatbot Robi</title>
-<link rel="stylesheet" href="sprechblase.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/sprechblase.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<link rel="stylesheet" href="/static/sprechblase.css">
+
 </head>
 
 <body>
@@ -40,9 +45,9 @@ $(document).ready(function() {
 });
 </script>
 
-
- <img id="img1" src="/static/robi1.png" alt="Chatbot" width="500" height=auto ><nobr></nobr>
- <img id="img2" src="/static/robi2.png" alt="Chatbot" width="500" height=auto style="visibility:hidden">
+<div >
+ <img id="img1" src="/static/robi1.png" alt="Chatbot" ><nobr></nobr>
+ <img id="img2" src="/static/robi2.png" alt="Chatbot" style="visibility:hidden">
  <script type="text/javascript">
       function tend() {
         document.getElementById('img1').style.visibility='hidden';
@@ -52,17 +57,12 @@ $(document).ready(function() {
  
  <div id="sprechblase">
    <h4> Hallo, ich bin Robi. </h4>
-   <dl widht=300px id="messages">
-   </dl>
-
-   <input id="message">
-   <input id="sendbutton" onclick="tend()" value="back">
+   <dl id="messages"></dl>
  </div>
  
  <div id="eingabefeld">
+   <input type="text" id="myMessage" placeholder="Frage hier eintippen" maxLength= "200px">
    <button id="sendbutton" onclick="tend()" value="back">Send</button>
-   <input type="text" id="myMessage" placeholder="Frage hier eintippen">
-   
  </div>
 
  <div id="sprechblase:before"> 
@@ -71,5 +71,8 @@ $(document).ready(function() {
  <div id="sprechblase:after">
  </div>
 
+ <script src="js/bootstrap.min.js"></script>
+ 
+ </div>
 </body>
 </html>
