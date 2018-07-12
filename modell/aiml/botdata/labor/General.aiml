@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+
+<!-- Response if no answer found -->
+
+<category>
+		<pattern>*</pattern>
+		
+		<template>
+			Ich habe deine Frage nicht verstanden
+		</template>
+	</category>
+
+</aiml>

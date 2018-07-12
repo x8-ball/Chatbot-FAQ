@@ -3,9 +3,9 @@
 
 <!-- comment -->
 <category>
-	<pattern>	</pattern>
+	<pattern>Wo finde ich den IP-Calculator?	</pattern>
 	<template>
-	
+		Den Calculator findest du hier:<a href="http://mi-learning.mi.hs-offenburg.de/CNet/ipRouting/ipAdressen/uebungen/index.html">IP-Calculator</a> 
 	<template>
 </category>
 </aiml>

@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml version="1.0">
 
-<!-- comment -->
+<!-- Benutzernamen und Passwörter -->
 <category>
-	<pattern>	</pattern>
+	<pattern>Wo finde ich Benutzername und Passwort</pattern>
 	<template>
-	
-	<template>
+		Die Login-Daten findest du auf den ausgehängten Listen.
+	</template>
 </category>
+
+<category>
+	<pattern>^ Benutzername </pattern>
+	<template>
+		<srai>Wo finde ich Benutzername und Passwort</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>Benutzername ^</pattern>
+	<template>
+		<srai>Wo finde ich Benutzername und Passwort</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>^ Passwort </pattern>
+	<template>
+		<srai>Wo finde ich Benutzername und Passwort</srai>
+	</template>
+</category>
+
+<category>
+	<pattern> Passwort ^</pattern>
+	<template>
+		<srai>Wo finde ich Benutzername und Passwort</srai>
+	</template>
+</category>
+
+
+
 </aiml>
