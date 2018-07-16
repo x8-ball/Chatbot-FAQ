@@ -1,6 +1,7 @@
 from flask import Flask,render_template
 from flask_socketio import SocketIO, send
 import sys
+import os
 # Add the ptdraft folder path to the sys.path list
 sys.path.append('.')
 sys.path.append('../../modell')
@@ -26,7 +27,12 @@ def handleMessage(msg):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
-	return render_template('index.html',adress = adress)
+	_gifFiles = []
+	for file in os.listdir("./static"):
+	    if file.endswith(".gif"):
+	        _gifFiles.append(file)
+	print _gifFiles
+	return render_template('index.html',adress = adress,gifFiles = _gifFiles)
 
 
 if __name__ == '__main__':

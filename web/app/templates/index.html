@@ -13,17 +13,16 @@
 </head>
 
 <body>
-
 <script type="text/javascript">
 var socket = io.connect('http://{{adress}}:5000');
-
+var gifFiles = JSON.parse('{{gifFiles|tojson}}');
+//alert(gifFiles);
 $(document).ready(function() {
 	//empfange message und hänge diese an messages an
 	socket.on('message', function(msg) {
 		if(msg.answer){
-			changeRobi();
 			var appendum = '<dd>'+ msg.answer +'</dd>';
-			$("#messages").append(appendum);
+			$("#answer").append(appendum);
 		}
 	});
 	//sende Nachricht und resette danach fenster von myMessage
@@ -32,37 +31,38 @@ $(document).ready(function() {
 			"text" : $('#myMessage').val(),
 			"type" : "question"
 		};
-		if(message){
+		if(message.text){
 			socket.send(message);
 			//$("#messages").append('<dt>'+message.text+'</dt>');
 			$('#myMessage').val('');
-			console.log("Sent " + message);
+			console.log("Sent " + JSON.stringify(message));
 		}
 		else{
 			console.log("bitte gib doch eine nachricht ein")
 		}
 	});
 });
+//Every 5 seconds
+setInterval(changeRobi, 5000);
+
+function changeRobi() {
+	var changeToFile = '/static/' + gifFiles[Math.floor(Math.random()*gifFiles.length)];
+	//alert(changeToFile);
+	document.getElementById('img').src= changeToFile;
+} 
 </script>
 
 <div >
- <img id="img1" src="/static/robi1.png" alt="Chatbot" ><nobr></nobr>
- <img id="img2" src="/static/robi2.png" alt="Chatbot" style="visibility:hidden">
- <script type="text/javascript">
-      function tend() {
-        document.getElementById('img1').style.visibility='hidden';
-		document.getElementById('img2').style.visibility='visible';
-      }
-    </script>
+ <img id="img" src="/static/robi1.png" alt="Chatbot" ><nobr>
  
  <div id="sprechblase">
    <h4> Hallo, ich bin Robi. </h4>
-   <dl id="messages"></dl>
+   <dl id="answer"></dl>
  </div>
  
  <div id="eingabefeld">
    <input type="text" id="myMessage" placeholder="Frage hier eintippen" maxLength= "200px">
-   <button id="sendbutton" onclick="tend()" value="back">Send</button>
+   <button id="sendbutton"" value="back">Send</button>
  </div>
 
  <div id="sprechblase:before"> 
