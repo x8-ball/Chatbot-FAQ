@@ -3,6 +3,6 @@
 sudo apt-get install -y python-pip python-flask python-flask-sockets;
 #sudo pip --no-cache-dir install -r requirementsServer.txt;
 sudo pip install flask, flask-socketio python-aiml;
-cd web/app;
-export FLASK_APP=frontend.py;
+cd web;
+export FLASK_APP=webserver.py;
 python -m flask run --host=0.0.0.0;

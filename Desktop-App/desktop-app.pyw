@@ -14,6 +14,7 @@ from PyQt5.QtCore import pyqtSlot,Qt
 from socketIO_client import SocketIO, LoggingNamespace
 
 HOST = '192.168.0.123'
+IMAGES_DIRECTORY = './images/'
 class App(QWidget):
  
     def __init__(self):
@@ -89,7 +90,7 @@ class App(QWidget):
         pinboard = QLabel(self)
         pinboard.setAlignment(Qt.AlignCenter)
         #pinboard.setStyleSheet("color: white; ")
-        pinboard.setStyleSheet("image: url(wolke.png)")
+        pinboard.setStyleSheet("image: url("+IMAGES_DIRECTORY+"wolke.png)")
         pinboard.setText("")
         #pinboard.setAttribute(Qt.WA_TranslucentBackground)
         pinboard.resize(800,300)
@@ -105,7 +106,7 @@ class App(QWidget):
 
     def createAvatar(self):
         avatar = QLabel(self)
-        pixmap = QPixmap('robi_bunt.png')
+        pixmap = QPixmap(IMAGES_DIRECTORY+ 'robi_bunt.png')
         avatar.setPixmap(pixmap.scaled(256,256, Qt.KeepAspectRatio))
         return avatar
 
