@@ -10,28 +10,28 @@
 </category>
 
 <category>
-	<pattern>^ Benutzername </pattern>
+	<pattern>* Benutzername </pattern>
 	<template>
 		<srai>Wo finde ich Benutzername und Passwort</srai>
 	</template>
 </category>
 
 <category>
-	<pattern>Benutzername ^</pattern>
+	<pattern>Benutzername *</pattern>
 	<template>
 		<srai>Wo finde ich Benutzername und Passwort</srai>
 	</template>
 </category>
 
 <category>
-	<pattern>^ Passwort </pattern>
+	<pattern>* Passwort </pattern>
 	<template>
 		<srai>Wo finde ich Benutzername und Passwort</srai>
 	</template>
 </category>
 
 <category>
-	<pattern> Passwort ^</pattern>
+	<pattern> Passwort *</pattern>
 	<template>
 		<srai>Wo finde ich Benutzername und Passwort</srai>
 	</template>
