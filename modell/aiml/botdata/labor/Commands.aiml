@@ -24,16 +24,14 @@
 			Ipconfig /all zeigt alle verfügbaren TCP/IP-Informationen an
 		</template>
 	</category>
-	</category>
-		<category>
+	<category>
 		<pattern>Was macht Ipconfig /displaydns?</pattern>
 		
 		<template>
 			Ipconfig /displaydns zeigt zeigt den lokalen DNS-Cache an
 		</template>
 	</category>
-	</category>
-		<category>
+	<category>
 		<pattern>Was macht Ipconfig /flushdns?</pattern>
 		
 		<template>
@@ -56,14 +54,11 @@
 			Das Kommando ping testet die Erreichbarkeit von Rechnern. 
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Welche Optionen hat Ping?</pattern>
 		
 		<template>
 			Im Labor benutzen wir die Optionen -l und -i für Ping
-			Syntax: ping [Optionen] Zielrechner
-			-l Größe sendet die angegebene Pufferlänge im ping
-			-i ttl-Wert setzt im IP-Paket den ttl-Wert auf den angegebenen Wert
 		</template>
 	</category>
 	<category>
@@ -73,7 +68,7 @@
 			Ping -l [Größe] bestimmt die Größe des gesendeten Packets
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Was macht Ping -i?</pattern>
 		
 		<template>
@@ -111,7 +106,7 @@
 		Das Kommando Arp zeigt die Übersetzungstabelle für IP-Adressen und physische Adressen an.
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Welche Optionen hat arp?</pattern>
 		
 		<template>
@@ -126,12 +121,13 @@
 			Das Kommando netstat zeigt Protokollstatistiken, die Routing-Tabelle und aktive Verbindungen an.
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Welche Optionen hat Netstat?</pattern>
 		
 		<template>
 			Im Labor benutzen wir für netstat die Optionen -n, -a, -r und -s.
 		</template>
+	</category>
 	<category>
 		<pattern>Was macht netstat -n?</pattern>
 		
@@ -139,21 +135,21 @@
 			Netstat -n zeigt Adressen und Portnummern numerisch an.
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Was macht netstat -a?</pattern>
 		
 		<template>
 			Netstat -a gibt alle Sockets an –auch die der Server, die auf eingehende Anfragen warten
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Was macht netstat -r?</pattern>
 		
 		<template>
 			Netstat -r zeigt die Routing-Tabelle an.
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Was macht netstat -s?</pattern>
 		
 		<template>
@@ -168,7 +164,7 @@
 			nslookup wird verwendet, um IP-Adressen oder Domänen eines bestimmen Computers mittels DNS herauszufinden.
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Welche Optionen hat Nslookup?</pattern>
 		
 		<template>
@@ -189,7 +185,7 @@
 		Hast du die richtigen Optionen für Nslookup benutzt?
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern> Nein </pattern>
 		<that>Hast du nslookup ohne Optionen gestartet?</that>
 		<template>
@@ -204,15 +200,14 @@
 			Der Befehl route zeigt die Einträge in der lokalen IP-Routing-Tabelle an und ändert sie. 
 		</template>
 	</category>
-		<category>
+	<category>
 		<pattern>Welche Optionen hat Route?</pattern>
 		
 		<template>
 			Für den Versuch wird nur die Option print verwendet. Diese zeigt die aktuelle Routing-Tabelle. Alternativ kann netstat –r eingesetzt werden.
 		</template>
 	</category>
-
-		<category>
+	<category>
 		<pattern> Wo finde ich die Routing-Tabelle?</pattern>
 		
 		<template>
@@ -239,7 +234,7 @@
 		</template>
 	</category>
 	<category>
-		<pattern>Routingtablle</pattern>
+		<pattern>Routingtabelle</pattern>
 		<template>
 			<srai>Routing-Tabelle</srai>
 		</template>
@@ -253,8 +248,8 @@
 	<category>
 		<pattern>Syntax</pattern>
 		<template>
-			<srai>Optionen<srai>
-		<template>
+			<srai>Optionen</srai>
+		</template>
 	</category>
 	<category>
 		<pattern>* netzwerkkonfiguration ^</pattern>
@@ -263,7 +258,7 @@
 		</template>
 	</category>
 	<category>
-		<pattern>Was macht *<pattern>
+		<pattern>Was macht *</pattern>
 		<template>
 			<srai>Was macht <star/>?</srai>
 		</template>

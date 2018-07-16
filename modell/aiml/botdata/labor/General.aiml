@@ -7,7 +7,11 @@
 		<pattern>*</pattern>
 		
 		<template>
-			Ich habe deine Frage nicht verstanden
+			<random>
+			<li>Ich habe deine Frage nicht verstanden</li>			
+			<li>Kannst du deine Frage bitte präzisieren?</li>
+			<li>Das kann ich dir nicht beantworten</li>
+			</random>
 		</template>
 	</category>
 
