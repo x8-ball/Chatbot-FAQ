@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+
+<!-- IPconfig -->
+	<category>
+		<pattern>Was ist Ipconfig?</pattern>
+		
+		<template>
+			Ipconfig zeigt Informationen über die lokale TCP/IP-Protokollkonfiguration. Unter Linux heißt dieser Befehl ifconfig.
+		</template>
+	</category>
+	
+	<category>
+		<pattern>Welche Optionen hat Ipconfig?</pattern>
+		
+		<template>
+			Im Labor benutzen wir die Optionen /all, /displaydns und /flushdns für Ipconfig
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht Ipconfig /all?</pattern>
+		
+		<template>
+			Ipconfig /all zeigt alle verfügbaren TCP/IP-Informationen an
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht Ipconfig /displaydns?</pattern>
+		
+		<template>
+			Ipconfig /displaydns zeigt zeigt den lokalen DNS-Cache an
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht Ipconfig /flushdns?</pattern>
+		
+		<template>
+			Ipconfig /flushdns löscht den lokalen DNS-Cache
+		</template>
+	</category>
+	<category>
+		<pattern>Wie kann ich Netzwerkkonfigurationen auslesen?</pattern>
+	
+		<template>
+			Die Netzwerkkonfiguration liest du mit dem Befehl Ipconfig aus.
+		</template>
+	</category>
+			
+<!-- Ping -->	
+	<category>
+		<pattern>Was ist Ping?</pattern>
+		
+		<template>
+			Das Kommando ping testet die Erreichbarkeit von Rechnern. 
+		</template>
+	</category>
+	<category>
+		<pattern>Welche Optionen hat Ping?</pattern>
+		
+		<template>
+			Im Labor benutzen wir die Optionen -l und -i für Ping
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht Ping -l?</pattern>
+		
+		<template>
+			Ping -l [Größe] bestimmt die Größe des gesendeten Packets
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht Ping -i?</pattern>
+		
+		<template>
+			Ping -i [Zeit] bestimmt die Lebensdauer eines Ping-Pakets.
+		</template>
+	</category>
+	<category>
+		<pattern>Wie kommuniziere ich mit Rechnern?</pattern>
+		
+		<template>
+			Am einfachsten kommunizierst du mit anderen Rechnern über das Kommando Ping.
+		</template>
+	</category>
+<!-- traceroute -->	
+	<category>
+		<pattern>Was ist trace-route? </pattern>
+      
+		<template>
+			Das Kommando tracert ermittelt die Router auf dem Weg zum Ziel
+		</template>
+	</category>
+   
+	<category>
+		<pattern>Welche Optionen hat trace-route?</pattern>
+		
+		<template>
+			Im Labor benutzen wir keine zusätzlichen Optionen für tracert, du gibts lediglich die IP des Hosts an.
+		</template>
+	</category>
+<!-- Arp -->
+	<category>
+		<pattern> Was ist arp?</pattern>
+		
+		<template>
+		Das Kommando Arp zeigt die Übersetzungstabelle für IP-Adressen und physische Adressen an.
+		</template>
+	</category>
+	<category>
+		<pattern>Welche Optionen hat arp?</pattern>
+		
+		<template>
+			Im Labor benutzen wir lediglich arp -a, um alle Einträge der ARP-Tabelle anzuzeigen.
+		</template>
+	</category>
+<!-- Netstat -->
+	<category>
+		<pattern> Was ist Netstat?</pattern>
+		
+		<template>
+			Das Kommando netstat zeigt Protokollstatistiken, die Routing-Tabelle und aktive Verbindungen an.
+		</template>
+	</category>
+	<category>
+		<pattern>Welche Optionen hat Netstat?</pattern>
+		
+		<template>
+			Im Labor benutzen wir für netstat die Optionen -n, -a, -r und -s.
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht netstat -n?</pattern>
+		
+		<template>
+			Netstat -n zeigt Adressen und Portnummern numerisch an.
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht netstat -a?</pattern>
+		
+		<template>
+			Netstat -a gibt alle Sockets an –auch die der Server, die auf eingehende Anfragen warten
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht netstat -r?</pattern>
+		
+		<template>
+			Netstat -r zeigt die Routing-Tabelle an.
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht netstat -s?</pattern>
+		
+		<template>
+			Netstat -s gibt Statistiken für Ethernet, IP, TCP und UDP aus.
+		</template>
+	</category>
+<!-- Nslookup -->
+	<category>
+		<pattern>Was ist Nslookup?</pattern>
+		
+		<template>
+			nslookup wird verwendet, um IP-Adressen oder Domänen eines bestimmen Computers mittels DNS herauszufinden.
+		</template>
+	</category>
+	<category>
+		<pattern>Welche Optionen hat Nslookup?</pattern>
+		
+		<template>
+			Mit Nslookup findest du die IP-Adresse zu einem Rechnernamen und anderherum. Zusätzlich kannst du mit nslookup -type=ns [domain] den Nameserever dieser Domain erfragen.
+			
+		</template>
+	</category>
+	<category>
+		<pattern> nslookup funktioniert nicht</pattern>
+		<template>
+		Hast du nslookup ohne Optionen gestartet?
+		</template>
+	</category>
+	<category>
+		<pattern> Ja </pattern>
+		<that>Hast du nslookup ohne Optionen gestartet?</that>
+		<template>
+		Hast du die richtigen Optionen für Nslookup benutzt?
+		</template>
+	</category>
+	<category>
+		<pattern> Nein </pattern>
+		<that>Hast du nslookup ohne Optionen gestartet?</that>
+		<template>
+		Wenn du Nslookup ohne Optionen aufrufst startet es im interaktiven Modus. Mit exit kommst du auf die Kommandozeile zurück.
+		</template>
+	</category>
+<!-- Route -->
+	<category>
+		<pattern>Was ist Route?</pattern>
+		
+		<template>
+			Der Befehl route zeigt die Einträge in der lokalen IP-Routing-Tabelle an und ändert sie. 
+		</template>
+	</category>
+	<category>
+		<pattern>Welche Optionen hat Route?</pattern>
+		
+		<template>
+			Für den Versuch wird nur die Option print verwendet. Diese zeigt die aktuelle Routing-Tabelle. Alternativ kann netstat –r eingesetzt werden.
+		</template>
+	</category>
+	<category>
+		<pattern> Wo finde ich die Routing-Tabelle?</pattern>
+		
+		<template>
+			Die Routing-Tabelle erhälst du mit den Kommandos route print.
+		</template>
+	</category>
+<!-- Srai -->
+	<category>
+		<pattern>tracert</pattern>
+		<template>
+			<srai>trace-route</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>^ kommuniziere ^ Rechner</pattern>
+		<template>
+			<srai>Wie kommuniziere ich mit Rechnern?</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>^ Routing-Tablle</pattern>
+		<template>
+			<srai>Wo finde ich die Routing-Tabelle?</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Routingtabelle</pattern>
+		<template>
+			<srai>Routing-Tabelle</srai>
+		</template>
+	</category>
+	<category>
+		<pattern> * funktioniert nicht </pattern>
+		<template>
+			<srai>Hast du die richtigen Optionen für <star/> benutzt?</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Syntax</pattern>
+		<template>
+			<srai>Optionen</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* netzwerkkonfiguration ^</pattern>
+		<template>
+			<srai>Wie kann ich Netzwerkkonfigurationen auslesen?</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Was macht *</pattern>
+		<template>
+			<srai>Was macht <star/>?</srai>
+		</template>
+	</category>
+</aiml>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+
+<!-- comment -->
+<category>
+	<pattern>Wo finde ich den IP-Calculator?	</pattern>
+	<template>
+		Den Calculator findest du hier:<a href="http://mi-learning.mi.hs-offenburg.de/CNet/ipRouting/ipAdressen/uebungen/index.html">IP-Calculator</a> 
+	<template>
+</category>
+</aiml>
