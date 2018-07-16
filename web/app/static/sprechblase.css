@@ -22,7 +22,7 @@
   width: 0;  
   height: 0;  
   left: 30px;  
-  top: 146px;  
+  top: 142px;  
   border: 20px solid;  
   border-color: grey transparent transparent grey;  
   }
@@ -33,23 +33,23 @@
   width: 0;  
   height: 0;  
   left: 34px;  
-  top: 146px;  
+  top: 142px;  
   border: 15px solid;  
   border-color: white transparent transparent white;  
   }
 
 #img1 {
   position: relative;
-  width: 500px;
+  width: 600px;
   height:auto;
-  top: 100px
+  top: 150px
 }
 
 #img2 {
   position: relative;
-  width: 500px;
+  width: 600px;
   height:auto;
-  top: 100px
+  top: 150px
 }
 
 #myMessage {
@@ -73,7 +73,7 @@
 }
 
 #eingabefeld {
-	position: relative;
+	position: absolute;
 	width: 800px;  
 	height: 100px;
 	right: 800px;
