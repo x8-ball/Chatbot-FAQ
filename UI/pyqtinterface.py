@@ -1,28 +1,19 @@
-#backward compatibility
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
-from builtins import (
-         bytes, dict, int, list, object, range, str,
-         ascii, chr, hex, input, next, oct, open,
-         pow, round, super,
-         filter, map, zip)
 ###############
 #TextToSpeech Dependencies#
-from gtts import gTTS
-from playsound import playsound
+#from gtts import gTTS
+#from playsound import playsound
 ###############
 
 import sys
 import socket
 
-from PyQt5.QtWidgets import (QMainWindow, QApplication, QWidget, 
-    QPushButton, QAction, QLineEdit, QMessageBox, 
-    QLabel, QDesktopWidget,QScrollArea)
+from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QApplication, QWidget,QPushButton, QAction, QLineEdit, QMessageBox, QLabel, QDesktopWidget,QScrollArea
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import pyqtSlot,Qt
 from socketIO_client import SocketIO, LoggingNamespace
 
-HOST = '127.0.0.1'
+HOST = '192.168.0.123'
 class App(QWidget):
  
     def __init__(self):
@@ -39,7 +30,9 @@ class App(QWidget):
 
         self.initSockets()
         self.setWindow()
+        print("init")
         self.initUI()
+        print("finishd")
 
     def checkIfHostUp(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -52,8 +45,10 @@ class App(QWidget):
     def setWindow(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        #self.setWindowFlags(Qt.FramelessWindowHint)
-        #self.statusBar().showMessage('Message in statusbar.')
+        self.setWindowFlags(Qt.FramelessWindowHint)
+
+        #self.setWindowFlags( Qt.Widget | Qt.WindowStaysOnTopHint | Qt.TransparentMode)
+        self.setWindowFlags(self.windowFlags() | Qt.TransparentMode)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setWindowModality(Qt.NonModal)  
         self.adjustWindow()
@@ -68,8 +63,11 @@ class App(QWidget):
         self.move(x, y)
 
     def initSockets(self):
+        print("check if host up")
         if self.checkIfHostUp():
-            self.socketIO = SocketIO('127.0.0.1', 5000)
+            print("connectionig")
+            self.socketIO = SocketIO(HOST, 5000)
+            print("connectionig2")
             self.socketIO.on('message', self.on_response)   
         else:
             raise Exception('Host is not up')
