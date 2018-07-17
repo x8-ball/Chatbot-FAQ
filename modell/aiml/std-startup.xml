@@ -6,7 +6,7 @@
 <template>
  
 <!-- Load standard AIML set -->
-<learn>../../modell/aiml/botdata/*.aiml</learn>
+<learn>../modell/aiml/botdata/*.aiml</learn>
 </template>
 </category>
  
