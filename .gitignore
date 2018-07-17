@@ -13,3 +13,5 @@ modell/aiml/bot_brain\.brn
 modell/brain\.pyc
 
 *.pyc
+
+doku/\.~lock\.CodeDoku\.odt#
