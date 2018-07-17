@@ -3,5 +3,6 @@
 #sudo apt-get install -y python-pip python-flask python-flask-sockets;
 #sudo pip install flask, flask-socketio python-aiml;
 sudo pip --no-cache-dir install -r requirements.txt;
-line="@reboot ~/Chatbot-FAQ/web/startupScript.sh"
-(crontab -u pi -l; echo "$line" ) | crontab -u pi -
+
+line="bash ~/Chatbot-FAQ/web/startupScript.sh"
+grep -q -F line ~/.bashrc || echo line >> ~/.bashrc
