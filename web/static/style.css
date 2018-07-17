@@ -1,14 +1,14 @@
 #sprechblase {  
   position: absolute;  
-  width: 350px;  
-  height: 150px;
+  width: 25%;  
+  height: 17.6%;
   right: 650px;
   top: 50px;
   line-height: 120px;  
   font-size: 1.8em;
   font-family: helvetica, tahoma;
   border: 4px solid grey;
-  margin: 0 auto; 
+  margin:0 auto;  
   -webkit-border-radius: 20px;  
   -moz-border-radius: 20px;  
   border-radius: 40px;
@@ -16,46 +16,41 @@
   background: #fff;
  }
 
-#sprechblase:before { 
+#sprechblase:before {  
   content: ' ';  
   position: absolute;  
   width: 0;  
   height: 0;  
   left: 30px;  
-  top: 142px;  
+  top: 150px;  
   border: 20px solid;  
   border-color: grey transparent transparent grey;  
   }
 
-#sprechblase:after { 
-  content: ' ';    
+#sprechblase:after {  
+  content: ' ';  
   position: absolute;  
   width: 0;  
   height: 0;  
   left: 34px;  
-  top: 142px;  
+  top: 150px;  
   border: 15px solid;  
   border-color: white transparent transparent white;  
   }
 
 #img1 {
-  position: relative;
-  width: 600px;
-  height:auto;
-  top: 150px
+  position: absolute;
+  top: 100px
 }
 
 #img2 {
-  position: relative;
-  width: 600px;
-  height:auto;
-  top: 150px
+  position: absolute;
+  top: 100px
 }
 
 #myMessage {
   border-color: transparent;
   width: 500px;
-  
 }
 
 #sendbutton {
@@ -64,7 +59,7 @@
   color: #FF92AB;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  position: relative;
+  position: fixed;
 }
 #sendbutton:hover {
   background-color: lightgrey;
@@ -81,4 +76,428 @@
 	left: 100px;
 	bottom: 100px;
 	border: 2px grey solid;
+}
+
+@media only screen and (max-width: 320px) {
+	#sprechblase {  
+		  position: absolute;  
+		  width: 30%;  
+		  height: 10%;
+		  right: 650px;
+		  top: 50px;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 4px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 150px;  
+		  border: 20px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 34px;  
+		  top: 150px;  
+		  border: 15px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#img1 {
+		  position: absolute;
+		  height: 20%;
+		  width: auto;
+		  top: 100px
+		}
+
+		#img2 {
+		  position: absolute;
+		  top: 100px
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		}
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 20%;  
+			height: 10%;
+			right: 800px;
+			top: 600px;
+			left: 100px;
+			bottom: 100px;
+			border: 2px grey solid;
+		}
+}
+
+@media only screen and (max-width: 480px) {
+		 #sprechblase {  
+		  position: absolute;  
+		  width: 20%;  
+		  height: 17.6%;
+		  right: 650px;
+		  top: 50px;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 4px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 150px;  
+		  border: 20px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 34px;  
+		  top: 150px;  
+		  border: 15px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#img1 {
+		  position: absolute;
+		  height: 20%;
+		  width: auto;
+		  top: 100px
+		}
+
+		#img2 {
+		  position: absolute;
+		  top: 100px
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		}
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 20%;  
+			height: 10%;
+			right: 800px;
+			top: 600px;
+			left: 100px;
+			bottom: 100px;
+			border: 2px grey solid;
+		}
+}
+
+
+@media only screen and (max-width: 768px) {
+		 #sprechblase {  
+		  position: absolute; 
+		  width: 25%;  
+		  height: 18%;
+		  left: 150px;
+		  top: 5%;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 2px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 100%;  
+		  border: 12px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 32.5px;  
+		  top: 100%;  
+		  border: 9px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#img1 {
+		  position: absolute;
+		  height: 40%;
+		  width: auto;
+		  top: 100px
+		}
+
+		#img2 {
+		  position: absolute;
+		  height: 40%;
+		  width: auto;
+		  top: 100px
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		  left: 80%;
+		}
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 70%;  
+			height: 15%;
+			right: 800px;
+			top: 70%;
+			left: 8%;
+			bottom: 100px;
+			border: 2px grey solid;
+		}
+		 
+	 
+}
+}
+@media only screen and (max-width: 1024px) {
+	#sprechblase {  
+		  position: absolute;  
+		  width: 20%;  
+		  height: 17.6%;
+		  right: 50%;
+		  top: 5%;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 4px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 150px;  
+		  border: 20px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 34px;  
+		  top: 150px;  
+		  border: 15px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#img1 {
+		  position: absolute;
+		  height: 5%;
+		  width: auto;
+		  top: 100px
+		}
+
+		#img2 {
+		  position: absolute;
+		  top: 100px
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		}
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 20%;  
+			height: 10%;
+			right: 40%;
+			top: 600px;
+			left: 100px;
+			bottom: 100px;
+			border: 2px grey solid;
+		}
+}
+	
+@media only screen and (min-width: 1024px) {
+		#sprechblase {  
+		  position: absolute;  
+		  width: 25%;  
+		  height: 17.6%;
+		  right: 50%;
+		  top: 5%;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 4px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 100%;  
+		  border: 20px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 34px;  
+		  top: 100%;  
+		  border: 15px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#img1 {
+		  position: absolute;
+		  height: 40%;
+		  width: auto;
+		  top: 20%;
+		  left: 5%;
+		}
+
+		#img2 {
+		  position: absolute;
+		  top: 100px
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		  left: 60%;
+		}
+		
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 50%;  
+			height: 10%;
+			right: 40%;
+			top: 70%;
+			left: 8%;
+			bottom: 20%;
+			border: 2px grey solid;
+		}
 }
