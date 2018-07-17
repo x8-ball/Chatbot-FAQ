@@ -4,7 +4,7 @@ import sys
 import os
 # Add the ptdraft folder path to the sys.path list
 sys.path.append('.')
-sys.path.append('../../modell')
+sys.path.append('../modell')
 
 import brain
 
