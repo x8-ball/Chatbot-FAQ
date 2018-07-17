@@ -4,5 +4,6 @@
 #sudo pip install flask, flask-socketio python-aiml;
 sudo pip --no-cache-dir install -r requirements.txt;
 
-line="bash ~/Chatbot-FAQ/web/startupScript.sh"
-grep -q -F line ~/.bashrc || echo line >> ~/.bashrc
+LINE='bash ~/Chatbot-FAQ/web/startupScript.sh'
+FILE=~/.bashrc
+grep -qF "$LINE" "$FILE"  || echo "$LINE" | sudo tee --append "$FILE"
