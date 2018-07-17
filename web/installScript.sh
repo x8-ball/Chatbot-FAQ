@@ -5,4 +5,5 @@
 sudo pip --no-cache-dir install -r requirements.txt;
 
 line="bash ~/Chatbot-FAQ/web/startupScript.sh"
-grep -q -F line ~/.bashrc || echo line >> ~/.bashrc
+
+sed -e "\|$line|h; \${x;s|$line||;{g;t};a\\" -e "$line" -e "}" '~/.bashrc'
