@@ -44,8 +44,14 @@ $(document).ready(function() {
 setInterval(changeRobi, 5000);
 
 function changeRobi() {
+
 	let changeToFile = '/static/' + gifFiles[Math.floor(Math.random()*gifFiles.length)];
 	document.getElementById('img').src= changeToFile;
+
+	var changeToFile = '/static/' + gifFiles[Math.floor(Math.random()*gifFiles.length)];
+	//alert(changeToFile);
+	document.getElementById('gif').src= changeToFile;
+
 } 
 </script>
 

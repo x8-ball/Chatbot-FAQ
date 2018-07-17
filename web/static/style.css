@@ -78,8 +78,8 @@
 		  position: absolute;  
 		  width: 30%;  
 		  height: 10%;
-		  left: 650px;
-		  top: 50px;
+		  left: 50%;
+		  top: 10%;
 		  line-height: 120px;  
 		  font-size: 1.8em;
 		  font-family: helvetica, tahoma;
@@ -151,15 +151,18 @@
 			bottom: 10%;
 			border: 2px grey solid;
 		}
+		#answer {
+			font-size: 20%;
+		}
 }
 
 @media only screen and (max-width: 480px) {
 		 #sprechblase {  
-		  position: absolute;  
-		  width: 20%;  
+		  float:left;
+		  width: 30%;  
 		  height: 17.6%;
-		  right: 650px;
-		  top: 50px;
+		  right: 5%;
+		  top: 5%;
 		  line-height: 120px;  
 		  font-size: 1.8em;
 		  font-family: helvetica, tahoma;
@@ -178,7 +181,7 @@
 		  width: 0;  
 		  height: 0;  
 		  left: 30px;  
-		  top: 150px;  
+		  top: 100%;  
 		  border: 20px solid;  
 		  border-color: grey transparent transparent grey;  
 		  }
@@ -189,16 +192,18 @@
 		  width: 0;  
 		  height: 0;  
 		  left: 34px;  
-		  top: 150px;  
+		  top: 100%;  
 		  border: 15px solid;  
 		  border-color: white transparent transparent white;  
 		  }
 
 		#gif {
-		  position: absolute;
+		  
+		  float:left;
 		  height: 20%;
 		  width: auto;
-		  top: 100px
+		  top: 10%;
+		  left: 5%;
 		}
 
 
@@ -214,10 +219,10 @@
 		  transition-duration: 0.4s;
 		  position: fixed;
 		}
+		
 		#sendbutton:hover {
 		  background-color: lightgrey;
 		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
-		  
 		}
 
 		#eingabefeld {
@@ -230,15 +235,190 @@
 			bottom: 100px;
 			border: 2px grey solid;
 		}
+		
+		#answer {
+			font-size: 30%;
+		}
 }
 
+@media only screen and (max-width: 560px) {
+		 #sprechblase {  
+		  position: absolute; 
+		  float: right;
+		  width: 25%;  
+		  height: 18%;
+		  right: 15%;
+		  top: 5%;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 2px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 100%;  
+		  border: 12px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 32.5px;  
+		  top: 100%;  
+		  border: 9px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#gif {
+		  float: left;
+		  height: 25%;
+		  width: auto;
+		  top: 20%;
+		  left: 5%;
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		  width: 80%;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		  left: 80%;
+		}
+		
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 70%;  
+			height: 15%;
+			right: 70%;
+			top: 70%;
+			left: 12%;
+			bottom: 10%;
+			border: 2px grey solid;
+		}
+		#answer {
+			font-size: 30%;
+		} 
+}
+@media only screen and (max-width: 723px) {
+		 #sprechblase {  
+		  position: absolute; 
+		  float: right;
+		  width: 25%;  
+		  height: 18%;
+		  right: 15%;
+		  top: 5%;
+		  line-height: 120px;  
+		  font-size: 1.8em;
+		  font-family: helvetica, tahoma;
+		  border: 2px solid grey;
+		  margin:0 auto;  
+		  -webkit-border-radius: 20px;  
+		  -moz-border-radius: 20px;  
+		  border-radius: 40px;
+		  text-align: center;  
+		  background: #fff;
+		 }
+
+		#sprechblase:before {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 30px;  
+		  top: 100%;  
+		  border: 12px solid;  
+		  border-color: grey transparent transparent grey;  
+		  }
+
+		#sprechblase:after {  
+		  content: ' ';  
+		  position: absolute;  
+		  width: 0;  
+		  height: 0;  
+		  left: 32.5px;  
+		  top: 100%;  
+		  border: 9px solid;  
+		  border-color: white transparent transparent white;  
+		  }
+
+		#gif {
+		  
+		  float: left;
+		  height: 35%;
+		  width: auto;
+		  top: 20%;
+		  left: 5%;
+		}
+
+		#myMessage {
+		  border-color: transparent;
+		  width: 80%;
+		}
+
+		#sendbutton {
+		  background-color: white;
+		  border-radius: 8px;
+		  color: #FF92AB;
+		  -webkit-transition-duration: 0.4s;
+		  transition-duration: 0.4s;
+		  position: fixed;
+		  left: 80%;
+		}
+		
+		#sendbutton:hover {
+		  background-color: lightgrey;
+		  box-shadow: 0 5px 5px 0 lightgrey, 0 5px 5px 0 lightgrey;
+		  
+		}
+
+		#eingabefeld {
+			position: absolute;
+			width: 70%;  
+			height: 15%;
+			right: 70%;
+			top: 70%;
+			left: 12%;
+			bottom: 10%;
+			border: 2px grey solid;
+		}
+		#answer {
+			font-size: 40%;
+		} 
+}
 
 @media only screen and (max-width: 768px) {
 		 #sprechblase {  
 		  position: absolute; 
 		  width: 25%;  
 		  height: 18%;
-		  left: 150px;
+		  left: 50%;
 		  top: 5%;
 		  line-height: 120px;  
 		  font-size: 1.8em;
@@ -310,16 +490,18 @@
 			bottom: 100px;
 			border: 2px grey solid;
 		}
+		#answer {
+			font-size: 40%;
+		}
 		 
-	 
-}
 }
 @media only screen and (max-width: 1024px) {
 	#sprechblase {  
 		  position: absolute;  
-		  width: 20%;  
-		  height: 17.6%;
-		  left: 10%;
+		  float: right;
+		  width: 30%;  
+		  height: 22%;
+		  left: 40%;
 		  top: 5%;
 		  line-height: 120px;  
 		  font-size: 1.8em;
@@ -339,7 +521,7 @@
 		  width: 0;  
 		  height: 0;  
 		  left: 30px;  
-		  top: 150px;  
+		  top: 100%;  
 		  border: 20px solid;  
 		  border-color: grey transparent transparent grey;  
 		  }
@@ -350,17 +532,18 @@
 		  width: 0;  
 		  height: 0;  
 		  left: 34px;  
-		  top: 150px;  
+		  top: 100%;  
 		  border: 15px solid;  
 		  border-color: white transparent transparent white;  
 		  }
 
 		#gif {
 		  position: absolute;
-		  height: 5%;
+		  float: left;
+		  height: 50%;
 		  width: auto;
-		  top: 25%;
-		  left: 40%;
+		  top: 20%;
+		  left: 10%;
 		}
 
 		#myMessage {
@@ -374,7 +557,7 @@
 		  -webkit-transition-duration: 0.4s;
 		  transition-duration: 0.4s;
 		  position: fixed;
-		  left: 90%;
+		  left: 80%;
 		}
 		#sendbutton:hover {
 		  background-color: lightgrey;
@@ -383,22 +566,25 @@
 
 		#eingabefeld {
 			position: absolute;
-			width: 10%;  
-			height: 10%;
+			width: 70%;  
+			height: 15%;
 			right: 2%;
 			top: 70%;
 			left: 8%;
 			bottom: 10%;
 			border: 2px grey solid;
 		}
+		#answer {
+			font-size: 40%;
+		}
 }
 	
 @media only screen and (min-width: 1024px) {
 		#sprechblase {  
 		  position: absolute;  
-		  width: 25%;  
-		  height: 17.6%;
-		  right: 48%;
+		  width: 35%;  
+		  height: 24%;
+		  right: 37%;
 		  top: 5%;
 		  line-height: 120px;  
 		  font-size: 1.8em;
@@ -436,7 +622,7 @@
 
 		#gif {
 		  position: absolute;
-		  height: 40%;
+		  height: 45%;
 		  width: auto;
 		  top: 25%;
 		  left: 2%;
@@ -454,7 +640,7 @@
 		  -webkit-transition-duration: 0.4s;
 		  transition-duration: 0.4s;
 		  position: fixed;
-		  left: 60%;
+		  left: 90%;
 		}
 		
 		#sendbutton:hover {
@@ -465,12 +651,15 @@
 
 		#eingabefeld {
 			position: absolute;
-			width: 50%;  
-			height: 10%;
+			width: 80%;  
+			height: 20%;
 			right: 40%;
 			top: 70%;
 			left: 8%;
 			bottom: 20%;
 			border: 2px grey solid;
+		}
+		#answer {
+			font-size: 70%;
 		}
 }
