@@ -4,7 +4,7 @@ import sys
 import os
 # Add the ptdraft folder path to the sys.path list
 sys.path.append('.')
-sys.path.append('../modell')
+sys.path.append('modell')
 
 import brain
 
@@ -12,8 +12,8 @@ app = Flask(__name__)
 app.debug = True
 app.host = '0.0.0.0'
 socketio = SocketIO(app)
-#bei localhost: '127.0.0.1'
-adress = '141.79.88.5'
+adress =  'localhost'
+#adress = '141.79.88.5'
 
 @socketio.on('message')
 def handleMessage(msg):
@@ -24,6 +24,7 @@ def handleMessage(msg):
 			answer = brain.calcResponse(msg['text'])
 			send({"answer" : answer})
 			print('Antwort: ' + str(answer))
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):

@@ -11,3 +11,5 @@ UI/\.\.mp3
 modell/aiml/bot_brain\.brn
 
 modell/brain\.pyc
+
+*.pyc
