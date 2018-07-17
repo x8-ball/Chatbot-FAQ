@@ -90,7 +90,7 @@ class App(QWidget):
         pinboard = QLabel(self)
         pinboard.setAlignment(Qt.AlignCenter)
         #pinboard.setStyleSheet("color: white; ")
-        pinboard.setStyleSheet("image: url("+IMAGES_DIRECTORY+"wolke.png)")
+        pinboard.setStyleSheet("image: url("+IMAGES_DIRECTORY+"sprechblase.png)")
         pinboard.setFont(QFont("Times",13,QFont.Bold))
         pinboard.setText("")
         #pinboard.setAttribute(Qt.WA_TranslucentBackground)
@@ -107,7 +107,7 @@ class App(QWidget):
 
     def createAvatar(self):
         avatar = QLabel(self)
-        pixmap = QPixmap(IMAGES_DIRECTORY+ 'robi_bunt.png')
+        pixmap = QPixmap(IMAGES_DIRECTORY+ 'robi.png')
         avatar.setPixmap(pixmap.scaled(256,256, Qt.KeepAspectRatio))
         return avatar
 
