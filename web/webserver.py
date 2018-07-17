@@ -13,7 +13,7 @@ app.debug = True
 app.host = '0.0.0.0'
 socketio = SocketIO(app)
 #bei localhost: '127.0.0.1'
-adress = 'chatbot.local'
+adress = '141.79.88.5'
 
 @socketio.on('message')
 def handleMessage(msg):

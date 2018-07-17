@@ -13,7 +13,7 @@ from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import pyqtSlot,Qt
 from socketIO_client import SocketIO, LoggingNamespace
 
-HOST = '192.168.0.123'
+HOST = '141.79.88.5'
 IMAGES_DIRECTORY = './images/'
 class App(QWidget):
  
