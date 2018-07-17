@@ -22,6 +22,7 @@ def handleMessage(msg):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
+	adress =  'chatbot.local'
 	_gifFiles = []
 	for file in os.listdir("./static"):
 	    if file.endswith(".gif"):
@@ -30,6 +31,6 @@ def index(path):
 
 if __name__ == '__main__':
 	app.host = '0.0.0.0'
-	adress =  'localhost'
+	
 	#adress = '141.79.88.5'
 	socketio.run(app)

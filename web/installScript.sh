@@ -6,4 +6,4 @@ sudo pip --no-cache-dir install -r requirements.txt;
 
 LINE='bash ~/Chatbot-FAQ/web/startupScript.sh'
 FILE=~/.bashrc
-grep -qF "$LINE" "$FILE"  || echo "$LINE" | sudo tee --append "$FILE"
+crontab -l | grep -q 'search string'  && echo 'crontab wurde wieder gesetzt' || grep -qF "$LINE" "$FILE"  || echo "$LINE" | sudo tee --append "$FILE"
