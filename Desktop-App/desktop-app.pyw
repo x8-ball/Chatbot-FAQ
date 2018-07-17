@@ -7,30 +7,21 @@
 import sys
 import socket
 
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtWidgets import QApplication, QWidget,QPushButton, QAction, QLineEdit, QMessageBox, QLabel, QDesktopWidget,QScrollArea
-from PyQt5.QtGui import QIcon, QPixmap, QFont
+from PyQt5.QtWidgets import QApplication, QWidget,QPushButton, QLineEdit, QLabel, QDesktopWidget, QScrollArea
+from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import pyqtSlot,Qt
-from socketIO_client import SocketIO, LoggingNamespace
+from socketIO_client import SocketIO
 
 HOST = '141.79.88.5'
 IMAGES_DIRECTORY = './images/'
 class App(QWidget):
- 
     def __init__(self):
-        super().__init__()
+        super(App,self).__init__()
+        # for Windows super().__init__()
         self.title = 'Chatbot FAQ'
-        self.history = ''
-
-        self.left = 200
-        self.top = 200
-        self.width = 500
-        self.height = 500
-
-        self.inputWidgetHeight = 100
-
-        #self.initSockets()
+        self.initSockets()
         self.setWindow()
+        self.adjustWindow()
         self.initUI()
 
     def checkIfHostUp(self):
@@ -43,13 +34,11 @@ class App(QWidget):
 
     def setWindow(self):
         self.setWindowTitle(self.title)
-        #self.setGeometry(self.left, self.top, self.width, self.height)
         self.setWindowFlags(Qt.FramelessWindowHint)
         #self.setWindowFlags( Qt.Widget | Qt.WindowStaysOnTopHint | Qt.TransparentMode)
         self.setWindowFlags(self.windowFlags() | Qt.TransparentMode)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setWindowModality(Qt.NonModal)  
-        self.adjustWindow()
 
     def adjustWindow(self):
         ag = QDesktopWidget().availableGeometry()
@@ -62,18 +51,11 @@ class App(QWidget):
         y = 2 * ag.height() - sg.height() - widget.height()
         self.move(x, y)
 
-    
     def adjustWidgets(self):
-        yAxis = 300 - self.avatar.height() - self.button.height()
-        xAntiPattern = self.inputArea.width() + self.button.width()
-
         rightBorder = self.usedGeometry.width()
-
         bottomBorder = self.usedGeometry.height()
 
-        self.avatar.move(rightBorder-256,bottomBorder-256)
-        print(self.avatar.pos().x())
-        print(self.avatar.pos().y())        
+        self.avatar.move(rightBorder-256,bottomBorder-256)       
         self.button.move(self.avatar.pos().x() -self.button.width(),bottomBorder- self.button.height())
         self.inputArea.move(self.button.pos().x() -self.inputArea.width(),self.button.pos().y())
         self.pinboard.move(rightBorder-self.pinboard.width(),self.avatar.pos().y()-self.pinboard.height())
@@ -93,15 +75,12 @@ class App(QWidget):
         pinboard.setStyleSheet("image: url("+IMAGES_DIRECTORY+"sprechblase.png)")
         pinboard.setFont(QFont("Times",13,QFont.Bold))
         pinboard.setText("")
-        #pinboard.setAttribute(Qt.WA_TranslucentBackground)
         pinboard.resize(800,300)
         return pinboard
 
     def createButton(self):
-        # Create a button in the window
         button = QPushButton('Ask Robi', self)
-        button.resize(100,self.inputWidgetHeight)
-        # connect button to function on_click
+        button.resize(100,100)
         button.clicked.connect(self.on_click)
         return button
 
@@ -113,10 +92,9 @@ class App(QWidget):
 
     def createInputArea(self):
         inputArea = QLineEdit(self)
-        inputArea.resize(200,self.inputWidgetHeight)
+        inputArea.resize(200,100)
         return inputArea
         
-
     def initUI(self):
         # Create widgets
         self.avatar = self.createAvatar()
@@ -126,12 +104,10 @@ class App(QWidget):
         self.adjustWidgets()
         self.show()
 
-
     def on_response(self,*args):
         try:
             self.history += 'Answered: '+ args[0]['answer'].replace(".",".\n") + '\n'
             self.pinboard.setText(self.history)
-            #print(args[0]['answer'])
             self.inputArea.setText("")
             """
             tts = gTTS(text=args[0]['answer'], lang='de')
@@ -141,20 +117,17 @@ class App(QWidget):
         except:
             pass
 
-
     @pyqtSlot()
     def on_click(self):
         textboxValue = self.inputArea.text()
         self.history = 'Asked: '+ textboxValue + '\n'
         self.pinboard.setText(self.history)
-        #self.output.hide()
         self.socketIO.send({
             "text" : textboxValue,
             "type" : "question"
             })
         self.socketIO.wait(seconds=0.1) 
 
- 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = App()
