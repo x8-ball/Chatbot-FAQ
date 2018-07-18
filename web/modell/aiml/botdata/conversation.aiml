@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 
 
-<aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
-<category>
-	<pattern>* FUNKTIONIERT NICHT</pattern>
-	<template>hast du die richtige Syntax verwendet</template>
-</category>
-<category>
-	<pattern>JA</pattern><that>hast du die richtige syntax verwendet</that>
-	<template>überprüfe doch noch einmal deine Rechtschreibung</template>
-</category>
+<aiml version="1.0.1">
+
+
 <category>
 	<pattern>*</pattern>
 	<template>
@@ -23,8 +14,16 @@
 		</random></template>
 </category>
 <category>
+	<pattern>* FUNKTIONIERT NICHT</pattern>
+	<template>hast du die richtige Syntax verwendet</template>
+</category>
+<category>
+	<pattern>JA</pattern><that>hast du die richtige syntax verwendet</that>
+	<template>überprüfe doch noch einmal deine Rechtschreibung</template>
+</category>
+<category>
 	<pattern>ICH HABE EIN PROBLEM MIT *</pattern>
-	<template>bitte beschreibe dein Problem mit <set><star /></set></template>
+	<template>Bitte beschreibe dein Problem mit <star /></template>
 </category>
 <category>
 	<pattern>PROBLEM *</pattern>
@@ -34,4 +33,22 @@
 	<pattern>* PROBLEM *</pattern>
 	<template><srai>ICH HABE EIN PROBLEM MIT *</srai></template>
 </category>
+
+<category>
+      <pattern>WHAT ABOUT MOVIES</pattern>
+      <template>Do you like comedy movies</template>  
+   </category>
+   
+   <category>
+      <pattern>YES</pattern>
+      <that>Do you like comedy movies</that>
+      <template>Nice, I like comedy movies too.</template>
+   </category>
+   
+   <category>
+      <pattern>NO</pattern>
+      <that>Do you like comedy movies</that>
+      <template>Ok! But I like comedy movies.</template>
+   </category> 
+
 </aiml>

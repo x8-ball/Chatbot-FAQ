@@ -2,9 +2,7 @@
 
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
+
 <category>
 	<pattern>WO FINDE ICH BENUTZERNAME UND PASSWORT</pattern>
 	<template>Die Login-Daten findest du auf den ausgehängten Listen.</template>

@@ -2,9 +2,7 @@
 
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="tracert">
+
 <category>
 	<pattern>WAS IST TRACERT</pattern>
 	<template>Mit tracert [Ip-Adresse] ermittelst du den Weg eines Pakets zu seinem Ziel.</template>
@@ -40,5 +38,5 @@
 <category>
 	<pattern>* TRACERT *</pattern>
 	<template><srai>WAS IST TRACERT</srai></template>
-</category></topic>
+</category>
 </aiml>

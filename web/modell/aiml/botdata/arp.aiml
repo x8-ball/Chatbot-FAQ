@@ -5,7 +5,7 @@
 <aiml>
 <!--author: trane-->
 <!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="arp">
+<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
 <category>
 	<pattern>WAS IST ARP</pattern>
 	<template>Das Kommando Arp zeigt dir die Übersetzungstabelle für IP-Adressen und MAC-Adressen an.</template>
@@ -49,5 +49,5 @@
 <category>
 	<pattern>* ARP *</pattern>
 	<template><srai>WELCHE OPTIONEN HAT ARP <star /></srai></template>
-</category></topic>
+</category>
 </aiml>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
+
 <category>
 	<pattern>WO FINDE ICH DEN IPCALCULATOR</pattern>
 	<template>Den Calculator findest du hier:<a href="http://mi-learning.mi.hs-offenburg.de/CNet/ipRouting/ipAdressen/uebungen/index.html">IP-Calculator</a> </template>

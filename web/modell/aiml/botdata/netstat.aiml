@@ -2,9 +2,7 @@
 
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="netstat">
+
 <category>
 	<pattern>WAS IST NETSTAT</pattern>
 	<template>Das Kommando netstat zeigt dir Protokollstatistiken, die Routing-Tabelle und aktive Verbindungen an.</template>
@@ -72,5 +70,5 @@
 <category>
 	<pattern>NETSTAT S</pattern>
 	<template><srai>WAS MACHT NETSTAT S</srai></template>
-</category></topic>
+</category>
 </aiml>

@@ -3,9 +3,7 @@
 
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="route">
+
 <category>
 	<pattern>WAS IST ROUTE</pattern>
 	<template>Der Befehl route zeigt dir die Einträge in der lokalen IP-Routing-Tabelle an. </template>
@@ -37,5 +35,5 @@
 <category>
 	<pattern>* ROUTE *</pattern>
 	<template><srai>WAS IST ROUTE</srai></template>
-</category></topic>
+</category>
 </aiml>

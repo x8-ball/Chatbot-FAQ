@@ -4,9 +4,7 @@
 
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="ipconfig">
+
 <category>
 	<pattern> OPTIONEN IPCONFIG *</pattern>
 	<template><srai>WELCHE OPTIONEN HAT IPCONFIG</srai></template>
@@ -82,5 +80,5 @@
 <category>
 	<pattern>* IPCONFIG *</pattern>
 	<template><srai>WAS MACHT IPCONFIG <star /></srai></template>
-</category></topic>
+</category>
 </aiml>

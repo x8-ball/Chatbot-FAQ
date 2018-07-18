@@ -2,9 +2,7 @@
 
 
 <aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="nslookup">
+
 <category>
 	<pattern>WAS IST NSLOOKUP</pattern>
 	<template>nslookup [domain] wird verwendet, um IP-Adressen oder Domänen eines bestimmen Computers mittels DNS herauszufinden.</template>
@@ -48,5 +46,5 @@
 <category>
 	<pattern>* NSLOOKUP *</pattern>
 	<template><srai>WAS IST NSLOOKUP</srai></template>
-</category></topic>
+</category>
 </aiml>
