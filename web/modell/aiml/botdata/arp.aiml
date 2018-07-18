@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="arp">
+<category>
+	<pattern>WAS IST ARP</pattern>
+	<template>Das Kommando Arp zeigt dir die Übersetzungstabelle für IP-Adressen und MAC-Adressen an.</template>
+</category>
+<category>
+	<pattern>WELCHE OPTIONEN HAT ARP</pattern>
+	<template>Für das Labor brauchst du lediglich arp-a, um dir alle Einträge der ARP-Tabelle anzeigen zu lassen.</template>
+</category>
+<category>
+	<pattern>* ARP</pattern>
+	<template><srai>WAS IST ARP</srai></template>
+</category>
+<category>
+	<pattern>* OPTIONEN ARP</pattern>
+	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
+</category>
+<category>
+	<pattern> ARP OPTIONEN *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
+</category>
+<category>
+	<pattern>ARP *</pattern>
+	<template><srai>WAS IST ARP</srai></template>
+</category>
+<category>
+	<pattern>OPTIONEN ARP *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
+</category>
+<category>
+	<pattern>* ARP OPTIONEN </pattern>
+	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
+</category>
+<category>
+	<pattern>ARP</pattern>
+	<template><srai>WAS IST ARP</srai></template>
+</category>
+<category>
+	<pattern>ARP OPTIONEN</pattern>
+	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
+</category>
+<category>
+	<pattern>* ARP *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT ARP <star /></srai></template>
+</category></topic>
+</aiml>

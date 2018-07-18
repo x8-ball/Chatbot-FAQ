@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="nslookup">
+<category>
+	<pattern>WAS IST NSLOOKUP</pattern>
+	<template>nslookup [domain] wird verwendet, um IP-Adressen oder Domänen eines bestimmen Computers mittels DNS herauszufinden.</template>
+</category>
+<category>
+	<pattern>WELCHE OPTIONEN HAT NSLOOKUP</pattern>
+	<template>Die einzig benötigte Option ist -type=ns [domain]. Mit dieser erfragst du den Nameserver dieser Domain.</template>
+</category>
+<category>
+	<pattern>NSLOOKUP FUNKTIONIERT NICHT</pattern>
+	<template>Hast du nslookup ohne Optionen gestartet?</template>
+</category>
+<category>
+	<pattern>JA</pattern><that>Hast du nslookup ohne Optionen gestartet?</that>
+	<template>Wenn du Nslookup ohne Optionen aufrufst startet es im interaktiven Modus. Mit exit kommst du auf die Kommandozeile zurück.</template>
+</category>
+<category>
+	<pattern>NEIN</pattern><that>Hast du nslookup ohne Optionen gestartet?</that>
+	<template>Überprüfe doch einmal deine Rechtschreibung</template>
+</category>
+<category>
+	<pattern>* NSLOOKUP</pattern>
+	<template><srai>WAS IST NSLOOKUP</srai></template>
+</category>
+<category>
+	<pattern>NS LOOKUP *</pattern>
+	<template><srai>WAS IST NSLOOKUP</srai></template>
+</category>
+<category>
+	<pattern>* OPTIONEN NSLOOKUP</pattern>
+	<template><srai>WELCHE OPTIONEN HAT NSLOOKUP</srai></template>
+</category>
+<category>
+	<pattern>OPTIONEN NSLOOKUP *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT NSLOOKUP</srai></template>
+</category>
+<category>
+	<pattern>NSLOOKUP</pattern>
+	<template><srai>WAS IST NSLOOKUP</srai></template>
+</category>
+<category>
+	<pattern>* NSLOOKUP *</pattern>
+	<template><srai>WAS IST NSLOOKUP</srai></template>
+</category></topic>
+</aiml>

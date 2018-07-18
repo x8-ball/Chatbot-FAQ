@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="route">
+<category>
+	<pattern>WAS IST ROUTE</pattern>
+	<template>Der Befehl route zeigt dir die Einträge in der lokalen IP-Routing-Tabelle an. </template>
+</category>
+<category>
+	<pattern>WELCHE OPTIONEN HAT ROUTE</pattern>
+	<template>Für den Versuch wird nur die Option print verwendet. Diese zeigt die aktuelle Routing-Tabelle. </template>
+</category>
+<category>
+	<pattern>WO FINDE ICH DIE ROUTINGTABELLE</pattern>
+	<template>Die Routing-Tabelle erhälst du mit den Kommandos route print.</template>
+</category>
+<category>
+	<pattern>ROUTINGTABELLE</pattern>
+	<template><srai>WO FINDE ICH DIE ROUTINGTABELLE</srai></template>
+</category>
+<category>
+	<pattern>ROUTE</pattern>
+	<template><srai>WAS IST ROUTE</srai></template>
+</category>
+<category>
+	<pattern>* ROUTE</pattern>
+	<template><srai>WAS IST ROUTE</srai></template>
+</category>
+<category>
+	<pattern>ROUTE *</pattern>
+	<template><srai>WAS IST ROUTE</srai></template>
+</category>
+<category>
+	<pattern>* ROUTE *</pattern>
+	<template><srai>WAS IST ROUTE</srai></template>
+</category></topic>
+</aiml>

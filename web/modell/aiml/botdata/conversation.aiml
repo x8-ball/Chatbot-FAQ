@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
+<category>
+	<pattern>* FUNKTIONIERT NICHT</pattern>
+	<template>hast du die richtige Syntax verwendet</template>
+</category>
+<category>
+	<pattern>JA</pattern><that>hast du die richtige syntax verwendet</that>
+	<template>überprüfe doch noch einmal deine Rechtschreibung</template>
+</category>
+<category>
+	<pattern>*</pattern>
+	<template>
+		<random>
+			<li>Ich habe deine Frage nicht verstanden</li>
+			<li>Kannst du deine Frage bitte präzisieren?</li>
+			<li>Bitte erläutere dein Problem genauer</li>
+		</random></template>
+</category>
+<category>
+	<pattern>ICH HABE EIN PROBLEM MIT *</pattern>
+	<template>bitte beschreibe dein Problem mit <set><star /></set></template>
+</category>
+<category>
+	<pattern>PROBLEM *</pattern>
+	<template><srai>ICH HABE EIN PROBLEM MIT *</srai></template>
+</category>
+<category>
+	<pattern>* PROBLEM *</pattern>
+	<template><srai>ICH HABE EIN PROBLEM MIT *</srai></template>
+</category>
+</aiml>

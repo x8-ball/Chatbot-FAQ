@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="ping">
+<category>
+	<pattern>WAS IST PING</pattern>
+	<template>Mit dem Kommando Ping sendest du ein ICMP Echo-Request-Paket an die Zieladresse und testest damit deren Erreichbarkeit</template>
+</category>
+<category>
+	<pattern>WELCHE OPTIONEN HAT PING</pattern>
+	<template>Im Labor benutzen wir die Optionen -l und -i für Ping</template>
+</category>
+<category>
+	<pattern>WAS MACHT PING L</pattern>
+	<template>Ping -l [Größe] bestimmt die Größe des gesendeten Packets</template>
+</category>
+<category>
+	<pattern>WAS MACHT PING I</pattern>
+	<template>Ping -i [Zeit] bestimmt die Lebensdauer eines Ping-Pakets.</template>
+</category>
+<category>
+	<pattern>WIE KOMMUNIZIERE ICH MIT RECHNERN</pattern>
+	<template>Am einfachsten kommunizierst du mit anderen Rechnern indem du diese anpingst.</template>
+</category>
+<category>
+	<pattern>* PING</pattern>
+	<template><srai>WAS IST PING</srai></template>
+</category>
+<category>
+	<pattern>*PING OPTIONEN *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT PING</srai></template>
+</category>
+<category>
+	<pattern>PING I</pattern>
+	<template><srai>WAS MACHT PING I</srai></template>
+</category>
+<category>
+	<pattern>* KOMMUNIZIERE * RECHNERN</pattern>
+	<template><srai>WIE KOMMUNIZIERE ICH MIT RECHNERN</srai></template>
+</category>
+<category>
+	<pattern>KOMMUNIZIEREN</pattern>
+	<template><srai>* KOMMUNIZIERE * RECHNERN</srai></template>
+</category>
+<category>
+	<pattern>RECHNER</pattern>
+	<template><srai>Rechnern</srai></template>
+</category>
+<category>
+	<pattern>* RECHNERN * KUMMUNIZIERE *</pattern>
+	<template><srai>* KOMMUNIZIERE * RECHNERN</srai></template>
+</category>
+<category>
+	<pattern>PING L</pattern>
+	<template><srai>WAS MACHT PING L</srai></template>
+</category>
+<category>
+	<pattern>PING</pattern>
+	<template><srai>WAS IST PING</srai></template>
+</category>
+<category>
+	<pattern>PING *</pattern>
+	<template><srai>WAS MACHT PING <star /></srai></template>
+</category>
+<category>
+	<pattern>* PING *</pattern>
+	<template><srai>WAS MACHT PING <star /></srai></template>
+</category></topic>
+</aiml>

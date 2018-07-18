@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="tracert">
+<category>
+	<pattern>WAS IST TRACERT</pattern>
+	<template>Mit tracert [Ip-Adresse] ermittelst du den Weg eines Pakets zu seinem Ziel.</template>
+</category>
+<category>
+	<pattern>WELCHE OPTIONEN HAT TRACERT</pattern>
+	<template>Für tracert benötigst du keine zusätzlichen Optionen, eine Ziel-IP reicht aus.</template>
+</category>
+<category>
+	<pattern>TRACERT *</pattern>
+	<template><srai>WAS MACHT TRACERT <star /></srai></template>
+</category>
+<category>
+	<pattern>OPTIONEN TRACERT *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT TRACERT</srai></template>
+</category>
+<category>
+	<pattern>TRACERT</pattern>
+	<template><srai>WAS IST TRACERT</srai></template>
+</category>
+<category>
+	<pattern>*TRACERT</pattern>
+	<template><srai>WAS IST TRACERT</srai></template>
+</category>
+<category>
+	<pattern>* OPTIONEN TRACERT</pattern>
+	<template><srai>WELCHE OPTIONEN HAT TRACERT</srai></template>
+</category>
+<category>
+	<pattern>OPTIONEN TRACERT</pattern>
+	<template><srai>WELCHE OPTIONEN HAT TRACERT</srai></template>
+</category>
+<category>
+	<pattern>* TRACERT *</pattern>
+	<template><srai>WAS IST TRACERT</srai></template>
+</category></topic>
+</aiml>

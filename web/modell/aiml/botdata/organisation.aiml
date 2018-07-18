@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
+<category>
+	<pattern>WO FINDE ICH BENUTZERNAME UND PASSWORT</pattern>
+	<template>Die Login-Daten findest du auf den ausgehängten Listen.</template>
+</category>
+<category>
+	<pattern>* BENUTZERNAME</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>BENUTZERNAME *</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>* PASSWORT</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>PASSWORT *</pattern>
+	<template><srai>* PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>BENUTZERNAME</pattern>
+	<template><srai>* BENUTZERNAME</srai></template>
+</category>
+<category>
+	<pattern>PASSWORT</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>LOGINDATEN</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>* LOGINDATEN</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+<category>
+	<pattern>LOGINDATEN *</pattern>
+	<template><srai>WO FINDE ICH BENUTZERNAME UND PASSWORT</srai></template>
+</category>
+</aiml>

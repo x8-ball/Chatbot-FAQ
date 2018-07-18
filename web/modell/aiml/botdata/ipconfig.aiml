@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+
+
+
+<aiml>
+<!--author: trane-->
+<!--licence: Standard-->
+<!--created with: GaitoBot AIML Editor V2.10.0.42867--><topic name="ipconfig">
+<category>
+	<pattern> OPTIONEN IPCONFIG *</pattern>
+	<template><srai>WELCHE OPTIONEN HAT IPCONFIG</srai></template>
+</category>
+<category>
+	<pattern>* IPCONFIG</pattern>
+	<template><srai>WAS IST IPCONFIG</srai></template>
+</category>
+<category>
+	<pattern>IPCONFIG ALL</pattern>
+	<template><srai>WAS MACHT IPCONFIG ALL</srai></template>
+</category>
+<category>
+	<pattern>IPCONFIG DISPLAYDNS</pattern>
+	<template><srai>WAS MACHT IPCONFIG DISPLAYDNS</srai></template>
+</category>
+<category>
+	<pattern>IPCONFIG FLUSHDNS</pattern>
+	<template><srai>WAS MACHT IPCONFIG FLUSHDNS</srai></template>
+</category>
+<category>
+	<pattern>* OPTIONEN IPCONFIG </pattern>
+	<template><srai>WELCHE OPTIONEN HAT IPCONFIG</srai></template>
+</category>
+<category>
+	<pattern>*NETZWERKKONFIGURATIONEN*</pattern>
+	<template><srai>WIE KANN ICH NETZWERKKONFIGURATIONEN AUSLESEN</srai></template>
+</category>
+<category>
+	<pattern>IPCONFIG *</pattern>
+	<template><srai>WAS MACHT IPCONFIG <star /></srai></template>
+</category>
+<category>
+	<pattern>NETZWERKKONFIGURATION</pattern>
+	<template><srai>NETZWERKKONFIGURATIONEN</srai></template>
+</category>
+<category>
+	<pattern>WAS IST IPCONFIG</pattern>
+	<template>Ipconfig zeigt dir Informationen über die lokale TCP/IP-Protokollkonfiguration an. Unter Linux heißt dieser Befehl ifconfig.</template>
+</category>
+<category>
+	<pattern>WAS MACHT IPCONFIG ALL</pattern>
+	<template>Ipconfig /all zeigt alle verfügbaren TCP/IP-Informationen an</template>
+</category>
+<category>
+	<pattern>WAS MACHT IPCONFIG DISPLAYDNS</pattern>
+	<template>Ipconfig /displaydns zeigt zeigt den lokalen DNS-Cache an</template>
+</category>
+<category>
+	<pattern>WAS MACHT IPCONFIG FLUSHDNS</pattern>
+	<template>Ipconfig /flushdns löscht den lokalen DNS-Cache</template>
+</category>
+<category>
+	<pattern>WELCHE OPTIONEN HAT IPCONFIG</pattern>
+	<template>Im Labor benutzen wir die Optionen /all, /displaydns und /flushdns für Ipconfig</template>
+</category>
+<category>
+	<pattern>WIE KANN ICH NETZWERKKONFIGURATIONEN AUSLESEN</pattern>
+	<template>Die Netzwerkkonfiguration liest du mit dem Befehl Ipconfig aus.</template>
+</category>
+<category>
+	<pattern>NETZWERKKONFIGURATIONEN*</pattern>
+	<template><srai>WIE KANN ICH NETZWERKKONFIGURATIONEN AUSLESEN</srai></template>
+</category>
+<category>
+	<pattern>*NETZWERKKONFIGURATIONEN</pattern>
+	<template><srai>WIE KANN ICH NETZWERKKONFIGURATIONEN AUSLESEN</srai></template>
+</category>
+<category>
+	<pattern>IPCONFIG</pattern>
+	<template><srai>WAS IST IPCONFIG</srai></template>
+</category>
+<category>
+	<pattern>* IPCONFIG *</pattern>
+	<template><srai>WAS MACHT IPCONFIG <star /></srai></template>
+</category></topic>
+</aiml>
