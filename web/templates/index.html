@@ -12,67 +12,61 @@
 
 </head>
 
-<body>
-<script type="text/javascript">
-var socket = io.connect('http://{{adress}}:5000');
-var gifFiles = JSON.parse('{{gifFiles|tojson}}');
-$(document).ready(function() {
-	//empfange message und hänge diese an messages an
-	socket.on('message', function(msg) {
-		if(msg.answer){
-			var appendum = '<dd>'+ msg.answer +'</dd>';
-			$("#answer").append(appendum);
-		}
-	});
-	//sende Nachricht und resette danach fenster von myMessage
-	$('#sendbutton').on('click', function() {
-		var message = {
-			"text" : $('#myMessage').val(),
-			"type" : "question"
-		};
-		if(message.text){
-			socket.send(message);
-			$('#myMessage').val('');
-			//console.log("Sent " + JSON.stringify(message));
-		}
-		else{
-			//console.log("bitte gib doch eine nachricht ein")
-		}
-	});
-});
-//Führe Funktion im Intervall von 5 Sekunden aus
-setInterval(changeRobi, 5000);
+	<body>
+		<script type="text/javascript">
+		var socket = io.connect('http://{{adress}}:5000');
+		var gifFiles = JSON.parse('{{gifFiles|tojson}}');
+		$(document).ready(function() {
+			//empfange message und hänge diese an messages an
+			socket.on('message', function(msg) {
+				if(msg.answer){
+					var appendum = '<dd>'+ msg.answer +'</dd>';
+					//$("#answer").append(appendum);
+					document.getElementById('answer').innerHTML = appendum;
+				}
+			});
+			//sende Nachricht und resette danach fenster von myMessage
+			$('#sendbutton').on('click', function() {
+				var message = {
+					"text" : $('#myMessage').val(),
+					"type" : "question"
+				};
+				if(message.text){
+					socket.send(message);
+					$('#myMessage').val('');
+					//console.log("Sent " + JSON.stringify(message));
+				}
+				else{
+					//console.log("bitte gib doch eine nachricht ein")
+				}
+			});
+		});
+		//Führe Funktion im Intervall von 5 Sekunden aus
+		setInterval(changeRobi, 5000);
 
-function changeRobi() {
+		function changeRobi() {
+			var changeToFile = '/static/' + gifFiles[Math.floor(Math.random()*gifFiles.length)];
+			//alert(changeToFile);
+			document.getElementById('gif').src= changeToFile;
 
-	let changeToFile = '/static/' + gifFiles[Math.floor(Math.random()*gifFiles.length)];
-	document.getElementById('img').src= changeToFile;
+		} 
+		</script>
 
-	var changeToFile = '/static/' + gifFiles[Math.floor(Math.random()*gifFiles.length)];
-	//alert(changeToFile);
-	document.getElementById('gif').src= changeToFile;
+		<div>
+			<img id="gif" src="/static/dancing.gif" alt="Chatbot" ><nobr>
 
-} 
-</script>
+			<div id="sprechblase">
+				<dl id="answer"></dl>
+			</div>
 
-<div >
- <img id="gif" src="/static/dancing.gif" alt="Chatbot" ><nobr>
- 
- <div id="sprechblase">
-   <dl id="answer"></dl>
- </div>
- 
- <div id="eingabefeld">
-   <input type="text" id="myMessage" placeholder="Frage hier eintippen">
-   <button id="sendbutton"" value="back">Ask</button>
- </div>
+			<div id="eingabefeld">
+				<input type="text" id="myMessage" placeholder="Frage hier eintippen">
+				<button id="sendbutton" value="back">Ask</button>
+			</div>
 
- <div id="sprechblase:before"> 
- </div>
+			<div id="sprechblase:before"></div>
 
- <div id="sprechblase:after">
- </div>
- 
- </div>
-</body>
+			<div id="sprechblase:after"></div>
+		</div>
+	</body>
 </html>
