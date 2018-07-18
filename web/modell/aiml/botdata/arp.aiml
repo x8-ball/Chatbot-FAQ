@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
+<aiml version="1.0.1">
 
-
-
-<aiml>
-<!--author: trane-->
-<!--licence: Standard-->
-<!--created with: GaitoBot AIML Editor V2.10.0.42867-->
 <category>
 	<pattern>WAS IST ARP</pattern>
 	<template>Das Kommando Arp zeigt dir die Übersetzungstabelle für IP-Adressen und MAC-Adressen an.</template>
