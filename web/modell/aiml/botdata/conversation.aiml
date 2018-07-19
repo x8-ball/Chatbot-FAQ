@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <aiml version="1.0.1">
 
-
 <category>
 	<pattern>*</pattern>
 	<template>
@@ -12,29 +11,20 @@
 		</random></template>
 </category>
 <category>
-	<pattern>* FUNKTIONIERT NICHT</pattern>
-	<template>Hast du die richtige Syntax verwendet? <that index="1,1"/></template>
-</category>
-<category>
-	<pattern>JA</pattern>
-	<that>Hast du die richtige syntax verwendet? *</that>
-	<template>Überprüfe doch noch einmal deine Rechtschreibung</template>
-</category>
-
-<category>
-<pattern>TEST THAT</pattern>
-<template>I just said: <that index="1,1"/></template>
-</category>
-<category>
-<pattern>TEST THAT</pattern>
-<that>I JUST SAID *</that>
-<template>I have already answered this question</template>
-</category>
-
-
-<category>
 	<pattern>ICH HABE EIN PROBLEM MIT *</pattern>
-	<template>Bitte beschreibe dein Problem mit <star /></template>
+	<template>Bitte beschreibe dein Problem mit <set name="problem"><star /></set></template>
+</category>
+<category>
+	<pattern>* FUNKTIONIERT NICHT</pattern>
+	<template>Hast du <get name="problem" /> denn richtig geschrieben?</template>
+</category>
+<category>
+	<pattern>JA</pattern><that>HAST DU * DENN RICHTIG GESCHRIEBEN</that>
+	<template>Hast du die Optionen von <get name="problem" /> richtig verwendet?</template>
+</category>
+<category>
+	<pattern>NEIN</pattern><that>HAST DU * DENN RICHTIG GESCHRIEBEN</that>
+	<template>Ich kann dir etwas über <get name="problem" /> erzählen wenn du willst</template>
 </category>
 <category>
 	<pattern>PROBLEM *</pattern>
@@ -44,8 +34,16 @@
 	<pattern>* PROBLEM *</pattern>
 	<template><srai>ICH HABE EIN PROBLEM MIT *</srai></template>
 </category>
-
-
-
-
+<category>
+	<pattern>JA</pattern><that>HAST DU DIE OPTIONEN VON * RICHTIG VERWENDET</that>
+	<template>Überprüfe noch einmal die Syntax von <get name="problem" /></template>
+</category>
+<category>
+	<pattern>NEIN</pattern><that>HAST DU DIE OPTIONEN VON * RICHTIG VERWENDET</that>
+	<template>Ich kann dir die Optionen erklären wenn du willst</template>
+</category>
+<category>
+	<pattern>KANNST DU MIR * ERKLÄREN</pattern>
+	<template>Was ist <star/></template>
+</category>
 </aiml>

@@ -19,7 +19,7 @@
 </category>
 <category>
 	<pattern>NEIN</pattern><that>Hast du nslookup ohne Optionen gestartet?</that>
-	<template>Überprüfe doch einmal deine Rechtschreibung</template>
+	<template>Überprüfe doch noch einmal deine Rechtschreibung und Syntax</template>
 </category>
 <category>
 	<pattern>* NSLOOKUP</pattern>
