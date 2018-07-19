@@ -10,10 +10,6 @@
 	<template>Für tracert benötigst du keine zusätzlichen Optionen, eine Ziel-IP reicht aus.</template>
 </category>
 <category>
-	<pattern>TRACERT *</pattern>
-	<template><srai>WAS MACHT TRACERT <star /></srai></template>
-</category>
-<category>
 	<pattern>OPTIONEN TRACERT *</pattern>
 	<template><srai>WELCHE OPTIONEN HAT TRACERT</srai></template>
 </category>

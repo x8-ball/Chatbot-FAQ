@@ -14,19 +14,15 @@
 	<template>Hast du nslookup ohne Optionen gestartet?</template>
 </category>
 <category>
-	<pattern>JA</pattern><that>Hast du nslookup ohne Optionen gestartet?</that>
+	<pattern>JA</pattern><that>HAST DU NSLOOKUP OHNE OPTIONEN GESTARTET</that>
 	<template>Wenn du Nslookup ohne Optionen aufrufst startet es im interaktiven Modus. Mit exit kommst du auf die Kommandozeile zurück.</template>
 </category>
 <category>
-	<pattern>NEIN</pattern><that>Hast du nslookup ohne Optionen gestartet?</that>
+	<pattern>NEIN</pattern><that>HAST DU NSLOOKUP OHNE OPTIONEN GESTARTET</that>
 	<template>Überprüfe doch noch einmal deine Rechtschreibung und Syntax</template>
 </category>
 <category>
 	<pattern>* NSLOOKUP</pattern>
-	<template><srai>WAS IST NSLOOKUP</srai></template>
-</category>
-<category>
-	<pattern>NS LOOKUP *</pattern>
 	<template><srai>WAS IST NSLOOKUP</srai></template>
 </category>
 <category>

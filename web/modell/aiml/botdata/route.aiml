@@ -26,10 +26,6 @@
 	<template><srai>WAS IST ROUTE</srai></template>
 </category>
 <category>
-	<pattern>ROUTE *</pattern>
-	<template><srai>WAS IST ROUTE</srai></template>
-</category>
-<category>
 	<pattern>* ROUTE *</pattern>
 	<template><srai>WAS IST ROUTE</srai></template>
 </category>

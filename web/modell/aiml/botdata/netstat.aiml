@@ -7,7 +7,7 @@
 </category>
 <category>
 	<pattern>WELCHE OPTIONEN HAT NETSTAT</pattern>
-	<template>Für das Labor beötigst du für netstat die Optionen -n, -a, -r oder -s.</template>
+	<template>Für das Labor benötigst du für netstat die Optionen -n, -a, -r oder -s.</template>
 </category>
 <category>
 	<pattern>WAS MACHT NETSTAT N</pattern>
@@ -15,15 +15,15 @@
 </category>
 <category>
 	<pattern>WAS MACHT NETSTAT A</pattern>
-	<template>Netstat -a gibt alle Sockets an -auch die der Server, die auf eingehende Anfragen warten</template>
+	<template>Netstat -a gibt dir alle Sockets an -auch die der Server, die auf eingehende Anfragen warten</template>
 </category>
 <category>
 	<pattern>WAS MACHT NETSTAT R</pattern>
-	<template>Netstat -r zeigt die Routing-Tabelle an.</template>
+	<template>Netstat -r zeigt dir die Routing-Tabelle an.</template>
 </category>
 <category>
 	<pattern>WAS MACHT NETSTAT S</pattern>
-	<template>Netstat -s gibt Statistiken für Ethernet, IP, TCP und UDP aus.</template>
+	<template>Netstat -s gibt dir Statistiken für Ethernet, IP, TCP und UDP aus.</template>
 </category>
 <category>
 	<pattern>* NETSTAT</pattern>
@@ -36,10 +36,6 @@
 <category>
 	<pattern>NETSTAT N</pattern>
 	<template><srai>WAS MACHT NETSTAT N</srai></template>
-</category>
-<category>
-	<pattern>NETSTAT *</pattern>
-	<template><srai>was macht netstat <star /></srai></template>
 </category>
 <category>
 	<pattern>NETSTAT OPTIONEN *</pattern>
@@ -55,7 +51,7 @@
 </category>
 <category>
 	<pattern>* NETSTAT *</pattern>
-	<template><srai>was macht netstat <star /></srai></template>
+	<template><srai>was macht netstat <star index="2"/></srai></template>
 </category>
 <category>
 	<pattern>NETSTAT A</pattern>

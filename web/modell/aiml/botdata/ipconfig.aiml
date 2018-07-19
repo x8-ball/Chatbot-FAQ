@@ -30,10 +30,6 @@
 	<template><srai>WIE KANN ICH NETZWERKKONFIGURATIONEN AUSLESEN</srai></template>
 </category>
 <category>
-	<pattern>IPCONFIG *</pattern>
-	<template><srai>WAS MACHT IPCONFIG <star /></srai></template>
-</category>
-<category>
 	<pattern>NETZWERKKONFIGURATION</pattern>
 	<template><srai>NETZWERKKONFIGURATIONEN</srai></template>
 </category>

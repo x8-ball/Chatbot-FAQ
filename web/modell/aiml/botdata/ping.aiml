@@ -58,10 +58,6 @@
 	<template><srai>WAS IST PING</srai></template>
 </category>
 <category>
-	<pattern>PING *</pattern>
-	<template><srai>WAS MACHT PING <star /></srai></template>
-</category>
-<category>
 	<pattern>* PING *</pattern>
 	<template><srai>WAS MACHT PING <star index="2"/></srai></template>
 </category>

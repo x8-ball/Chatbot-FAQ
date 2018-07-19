@@ -22,10 +22,6 @@
 	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
 </category>
 <category>
-	<pattern>ARP *</pattern>
-	<template><srai>WAS IST ARP</srai></template>
-</category>
-<category>
 	<pattern>OPTIONEN ARP *</pattern>
 	<template><srai>WELCHE OPTIONEN HAT ARP</srai></template>
 </category>
