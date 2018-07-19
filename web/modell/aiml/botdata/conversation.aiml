@@ -6,9 +6,15 @@
 	<template>
 		<random>
 			<li>Ich habe deine Frage nicht verstanden</li>
-			<li>Kannst du deine Frage bitte präzisieren?</li>
-			<li>Bitte erläutere dein Problem genauer</li>
+			<li>Kannst du deine Frage bitte prÃ¤zisieren?</li>
+			<li>Bitte erlÃ¤utere dein Problem genauer</li>
 		</random></template>
+</category>
+<category>
+	<pattern>Hallo *</pattern>
+	<template>
+		Hallo mein Freund! Wie kann ich dir behilflich sein?
+	</template>
 </category>
 <category>
 	<pattern>ICH HABE EIN PROBLEM MIT *</pattern>
@@ -24,7 +30,7 @@
 </category>
 <category>
 	<pattern>NEIN</pattern><that>HAST DU * DENN RICHTIG GESCHRIEBEN</that>
-	<template>Ich kann dir etwas über <get name="problem" /> erzählen wenn du willst</template>
+	<template>Ich kann dir etwas Ã¼ber <get name="problem" /> erzÃ¤hlen wenn du willst</template>
 </category>
 <category>
 	<pattern>PROBLEM *</pattern>
@@ -36,14 +42,14 @@
 </category>
 <category>
 	<pattern>JA</pattern><that>HAST DU DIE OPTIONEN VON * RICHTIG VERWENDET</that>
-	<template>Überprüfe noch einmal die Syntax von <get name="problem" /></template>
+	<template>ÃœberprÃ¼fe noch einmal die Syntax von <get name="problem" /></template>
 </category>
 <category>
 	<pattern>NEIN</pattern><that>HAST DU DIE OPTIONEN VON * RICHTIG VERWENDET</that>
-	<template>Ich kann dir die Optionen erklären wenn du willst</template>
+	<template>Ich kann dir die Optionen erklÃ¤ren wenn du willst</template>
 </category>
 <category>
-	<pattern>KANNST DU MIR * ERKLÄREN</pattern>
+	<pattern>KANNST DU MIR * ERKLÃ„REN</pattern>
 	<template>Was ist <star/></template>
 </category>
 </aiml>
