@@ -122,11 +122,15 @@ class App(QWidget):
         textboxValue = self.inputArea.text()
         self.history = 'Asked: '+ textboxValue + '\n'
         self.pinboard.setText(self.history)
+        del self.socketIO
+        self.initSockets()
         self.socketIO.send({
             "text" : textboxValue,
             "type" : "question"
             })
-        self.socketIO.wait(seconds=0.1) 
+        self.socketIO.wait(seconds=0.1)
+        print("send successful")
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
