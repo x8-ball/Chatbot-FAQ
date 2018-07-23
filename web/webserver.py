@@ -34,7 +34,7 @@ def on_disconnect():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
-	adress =  '192.168.0.116'
+	adress =  '141.79.88.5'
 	_gifFiles = []
 	for file in os.listdir("./static"):
 	    if file.endswith(".gif"):
