@@ -13,9 +13,9 @@ sys.path.append('.')
 current_path = os.path.dirname(os.path.abspath(getsourcefile(lambda:0)))
 aimlPath = current_path+'/aiml/'
 brains = {}
-MAX_CAP = 1
-DELETE_AFTER_X_MIN = 0.3
-CHECK_EVERY_X_SEC = 1
+MAX_CAP = 20
+DELETE_AFTER_X_MIN = 3
+CHECK_EVERY_X_SEC = 10
 
 class Brain:
 	def __init__(self, ip):
@@ -25,9 +25,7 @@ class Brain:
 		self.ip = ip
 
 	def answer(self,question):
-		print "old timestamp: " + str(self.lastUsed)
 		self.lastUsed = time.time()
-		print "updated " + self.ip + " with new timestamp: " + str(self.lastUsed)
 		return self.kernel.respond(question)
 
 
@@ -42,15 +40,15 @@ def deleteOldBrains():
 		checkedObject = brains[brain]
 		diffMinutes = (time.time() - checkedObject.lastUsed)/60 
 		if diffMinutes > DELETE_AFTER_X_MIN:
-			print time.time()
-			print checkedObject.lastUsed
-			print diffMinutes
-			print DELETE_AFTER_X_MIN
+			#print time.time()
+			#print checkedObject.lastUsed
+			#print diffMinutes
+			#print DELETE_AFTER_X_MIN
 			deleteBrain(checkedObject.ip)
 
 def loadBrain(ip):
 	response = ""
-	print MAX_CAP , len(brains) 
+	#print MAX_CAP , len(brains) 
 	if len(brains) < MAX_CAP:
 		if ip not in brains:
 			brains[ip] = Brain(ip)
@@ -67,12 +65,24 @@ def deleteBrain(ip):
 		print "ip " + ip +" deleted"
 
 def calcResponse(question,ip):
-	print "answer for " + ip
-	print brains
+	#print "answer for " + ip
+	print "ip is in brains: ", ip in brains
 	if ip in brains:
 		return brains[ip].answer(question)
 	else: 
 		return "Robi ist gerade sehr beschäftigt und hat keine Zeit"
 
+def testCPUusage():
+	print "starting tests"
+	testQuestion = "ich habe ein problem mit ping"
+	for i in range(0,20):
+		print "loading ", str(i)
+		loadBrain(str(i))
+	for i in range(20,0,-1):
+		print "answering ", str(i)
+		print calcResponse("ich habe ein problem mit ping",str(i))
+
+
 generateBrain()
 deleteOldBrains()
+#testCPUusage()
