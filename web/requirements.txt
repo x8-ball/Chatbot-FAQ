@@ -4,7 +4,7 @@ gevent-websocket==0.9.3
 Flask==0.12.1
 Flask-SocketIO==3.0.1
 Flask-Sockets==0.2.1
-pyOpenSSL==16.2.0
+pyOpenSSL
 python-aiml==0.9.1
 python-engineio==2.2.0
 python-socketio==2.0.0
