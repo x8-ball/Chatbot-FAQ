@@ -1,7 +1,7 @@
 greenlet==0.4.11
 gevent==1.1.2
 gevent-websocket==0.9.3
-Flask==0.12.3
+Flask==1.0
 Flask-SocketIO==3.0.1
 Flask-Sockets==0.2.1
 pyOpenSSL
